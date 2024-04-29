@@ -1,0 +1,1 @@
+Vista: registrar incidencia
