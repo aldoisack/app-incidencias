@@ -5,5 +5,11 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('registrar_incidencia', 'Controller_incidencias::index');
+
+// Incidencias
+$routes->get('/', 'Controller_incidencias::index');
+$routes->get('crear', 'Controller_incidencias::crear');
+
+// Áreas
+$routes->get('areas', 'Controller_areas::index');
+$routes->get('areas/crear', 'Controller_areas::crear');

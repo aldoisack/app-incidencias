@@ -3,14 +3,19 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
+use Models\Model_incidencia;
 
 class Controller_incidencias extends Controller
 {
     public function index()
     {
-        return view("view_registrar_incidencia");
+        return
+            view("view_template_header") .
+            view("view_incidencias_listar") .
+            view("view_template_footer");
     }
-    public function registrar_incidencia()
+    public function crear()
     {
+        return view("view_incidencias_crear");
     }
 }
