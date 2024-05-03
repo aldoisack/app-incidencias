@@ -9,8 +9,8 @@
 
                 <!-- Nómbre -->
                 <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="" />
+                    <label for="nombre_area" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre_area" id="nombre_area" aria-describedby="helpId" placeholder="" />
                 </div>
 
                 <button type="submit" class="btn btn-success">Guardar</button>

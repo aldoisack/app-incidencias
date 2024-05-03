@@ -23,6 +23,24 @@
                         <button type="button" class="btn btn-primary mb-2">Tomar</button>
                     </td>
                 </tr>
+                <tr class="">
+                    <td scope="row">0002</td>
+                    <td>Administración</td>
+                    <td>No tengo internet</td>
+                    <td>To do</td>
+                    <td>
+                        <button type="button" class="btn btn-primary mb-2">Tomar</button>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td scope="row">0003</td>
+                    <td>Infraestructura</td>
+                    <td>Las impresiones salen negras</td>
+                    <td>To do</td>
+                    <td>
+                        <button type="button" class="btn btn-primary mb-2">Tomar</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

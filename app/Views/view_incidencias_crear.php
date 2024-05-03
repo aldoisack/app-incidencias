@@ -30,12 +30,19 @@
             </div>
 
             <div class="card-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url("incidencias/guardar") ?>" method="post" enctype="multipart/form-data">
 
                     <!-- Área -->
                     <div class="mb-3">
-                        <label for="area" class="form-label">Área</label>
-                        <input type="text" class="form-control" name="area" id="area" aria-describedby="helpId" placeholder="" />
+                        <label for="id_area" class="form-label">Área</label>
+                        <select class="form-select form-select-mb" name="id_area" id="id_area">
+
+                            <option selected>--- Select one ---</option>
+                            <?php foreach ($areas as $registro) { ?>
+                                <option value="<?php echo $registro["id_area"] ?>"><?php echo $registro["nombre_area"] ?></option>
+                            <?php } ?>
+
+                        </select>
                     </div>
 
                     <!-- Problema -->

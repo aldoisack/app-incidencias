@@ -21,12 +21,17 @@
 
                 <!-- Incidencias -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="<?php echo base_url() ?>">Incidencias</a>
+                    <a class="nav-link <?php echo str_starts_with(current_url(), base_url("incidencias")) ? "active" : ""; ?>" href="<?php echo base_url("incidencias") ?>">Incidencias</a>
                 </li>
 
                 <!-- Áreas -->
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo base_url("areas") ?>">Áreas</a>
+                    <a class="nav-link <?php echo str_starts_with(current_url(), base_url("areas")) ? "active" : ""; ?>" href="<?php echo base_url("areas") ?>">Áreas</a>
+                </li>
+
+                <!-- Estados -->
+                <li class="nav-item">
+                    <a class="nav-link <?php echo str_starts_with(current_url(), base_url("estados")) ? "active" : ""; ?>" href="<?php echo base_url("estados") ?>">Estados</a>
                 </li>
 
             </ul>

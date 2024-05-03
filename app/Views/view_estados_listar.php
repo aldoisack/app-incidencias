@@ -2,30 +2,30 @@
 <main class="container">
     <div class="card">
         <div class="card-header">
-            <a name="" id="" class="btn btn-primary" href="<?php echo base_url("areas/crear") ?>" role="button">Agregar área</a>
+            <a name="" id="" class="btn btn-primary" href="<?php echo base_url("estados/crear") ?>" role="button">Agregar estado</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">N°</th>
-                            <th scope="col">Área</th>
+                            <th scope="col">N °</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $number = 1;
-                        foreach ($areas as $registro) {
+                        $numero = 1;
+                        foreach ($estados as $registro) {
                         ?>
                             <tr class="">
-                                <td scope="row"> <?php echo $number ?></td>
-                                <td> <?php echo $registro["nombre_area"]; ?> </td>
-                                <td> <a name="" id="" class="btn btn-primary" href="<?php echo base_url("areas/editar/" . $registro["id_area"]) ?>" role="button">Editar</a> </td>
+                                <td scope="row"><?php echo $numero; ?></td>
+                                <td><?php echo $registro["nombre_estado"]; ?></td>
+                                <td><a name="" id="" class="btn btn-primary" href="<?php echo base_url("estados/editar/" . $registro["id_estado"]) ?>" role="button">Editar</a></td>
                             </tr>
                         <?php
-                            $number += 1;
+                            $numero += 1;
                         }
                         ?>
                     </tbody>
@@ -34,4 +34,5 @@
 
         </div>
     </div>
+
 </main>
