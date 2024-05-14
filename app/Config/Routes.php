@@ -6,17 +6,20 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+// Login
+$routes->get("/", "Controller_login::index");
+
 // Incidencias
 $routes->get('incidencias', 'Controller_incidencias::index');
 $routes->get('incidencias/crear', 'Controller_incidencias::crear');
 $routes->post('incidencias/guardar', 'Controller_incidencias::guardar');
 
-// Áreas
-$routes->get('areas', 'Controller_areas::index');
-$routes->get('areas/crear', 'Controller_areas::crear');
-$routes->post('areas/guardar', 'Controller_areas::guardar');
+// Oficinas
+$routes->get('oficinas', 'Controller_oficinas::index');
+$routes->get('oficinas/crear', 'Controller_oficinas::crear');
+$routes->post('oficinas/guardar', 'Controller_oficinas::guardar');
 
-// Estados
-$routes->get('estados', 'Controller_estados::index');
-$routes->get('estados/crear', 'Controller_estados::crear');
-$routes->post('estados/guardar', 'Controller_estados::guardar');
+// Técnicos
+$routes->get('tecnicos', 'Controller_tecnicos::index');
+$routes->get('tecnicos/crear', 'Controller_tecnicos::crear');
+$routes->post('tecnicos/guardar', 'Controller_tecnicos::guardar');

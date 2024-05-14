@@ -1,0 +1,484 @@
+CRITICAL - 2024-05-13 10:52:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "view_oficinas_crear.php"
+[Method: GET, Route: oficinas/crear]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_oficinas_crear.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_oficinas_crear', [], true)
+ 3 APPPATH\Controllers\Controller_oficinas.php(25): view('view_oficinas_crear')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->crear()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-05-13 10:55:58 --> mysqli_sql_exception: Column 'nombre_oficina' cannot be null in C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `of...', 0)
+#1 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `of...')
+#2 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `of...')
+#3 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `of...', Array, false)
+#4 C:\xampp_8.2.12\htdocs\app_incidencias\system\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp_8.2.12\htdocs\app_incidencias\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp_8.2.12\htdocs\app_incidencias\system\Model.php(791): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp_8.2.12\htdocs\app_incidencias\app\Controllers\Controller_oficinas.php(34): CodeIgniter\Model->insert(Array)
+#8 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar()
+#9 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+#10 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp_8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-05-13 10:55:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'nombre_oficina' cannot be null
+[Method: POST, Route: oficinas/guardar]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (:nombre_oficina:)', [...], false)
+ 2 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Controller_oficinas.php(34): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 10:55:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'nombre_oficina' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (NULL)')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (NULL)')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (:nombre_oficina:)', [...], false)
+ 4 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\Controller_oficinas.php(34): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 10:55:58 --> [Caused by] mysqli_sql_exception: Column 'nombre_oficina' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (NULL)', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (NULL)')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (NULL)')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `oficinas` (`nombre_oficina`) VALUES (:nombre_oficina:)', [...], false)
+ 5 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\Controller_oficinas.php(34): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-05-13 20:43:55 --> mysqli_sql_exception: Table 'db_incidencias.estados' doesn't exist in C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp_8.2.12\htdocs\app_incidencias\app\Controllers\Controller_estados.php(13): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_estados->index()
+#8 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_estados))
+#9 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp_8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-05-13 20:43:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_incidencias.estados' doesn't exist
+[Method: GET, Route: estados]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Controller_estados.php(13): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_estados->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_estados))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 20:43:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'db_incidencias.estados' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Controller_estados.php(13): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_estados->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_estados))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 20:43:55 --> [Caused by] mysqli_sql_exception: Table 'db_incidencias.estados' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estados`
+ORDER BY `id_estado` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Controller_estados.php(13): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_estados->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_estados))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 20:57:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "view_tecnicos_listar.php"
+[Method: GET, Route: tecnicos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_tecnicos_listar.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_listar', [], true)
+ 3 APPPATH\Controllers\Controller_tecnicos.php(16): view('view_tecnicos_listar', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 20:57:20 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: tecnicos]
+in APPPATH\Views\view_tecnicos_listar.php on line 20.
+ 1 APPPATH\Views\view_tecnicos_listar.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_listar.php', 20)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_listar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_listar', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(16): view('view_tecnicos_listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:14:24 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 53.
+ 1 APPPATH\Views\view_tecnicos_crear.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 53)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:15:08 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 53.
+ 1 APPPATH\Views\view_tecnicos_crear.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 53)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:15:12 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 53.
+ 1 APPPATH\Views\view_tecnicos_crear.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 53)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:16:11 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 52.
+ 1 APPPATH\Views\view_tecnicos_crear.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 52)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:16:11 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 52.
+ 1 APPPATH\Views\view_tecnicos_crear.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 52)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-05-13 22:32:27 --> mysqli_sql_exception: Unknown column 'id_usuario' in 'order clause' in C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp_8.2.12\htdocs\app_incidencias\app\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+#8 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+#9 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp_8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-05-13 22:32:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_usuario' in 'order clause'
+[Method: GET, Route: tecnicos/crear]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = :nombre_oficina:
+ORDER BY `id_usuario` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:32:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_usuario' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `id_usuario` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `id_usuario` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = :nombre_oficina:
+ORDER BY `id_usuario` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:32:27 --> [Caused by] mysqli_sql_exception: Unknown column 'id_usuario' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `id_usuario` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `id_usuario` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `id_usuario` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = :nombre_oficina:
+ORDER BY `id_usuario` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-05-13 22:33:00 --> mysqli_sql_exception: Unknown column 'if_oficina' in 'order clause' in C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp_8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp_8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp_8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp_8.2.12\htdocs\app_incidencias\app\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+#8 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+#9 C:\xampp_8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp_8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp_8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-05-13 22:33:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'if_oficina' in 'order clause'
+[Method: GET, Route: tecnicos/crear]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = :nombre_oficina:
+ORDER BY `if_oficina` ASC', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:33:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'if_oficina' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `if_oficina` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `if_oficina` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = :nombre_oficina:
+ORDER BY `if_oficina` ASC', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:33:00 --> [Caused by] mysqli_sql_exception: Unknown column 'if_oficina' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `if_oficina` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `if_oficina` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = \'Tecnologías de la información\'
+ORDER BY `if_oficina` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `oficinas`
+WHERE `nombre_oficina` = :nombre_oficina:
+ORDER BY `if_oficina` ASC', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Controller_tecnicos.php(24): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:33:09 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 52.
+ 1 APPPATH\Views\view_tecnicos_crear.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 52)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 22:36:25 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: tecnicos/crear]
+in APPPATH\Views\view_tecnicos_crear.php on line 52.
+ 1 APPPATH\Views\view_tecnicos_crear.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php', 52)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_crear.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_crear', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(27): view('view_tecnicos_crear', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->crear()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 23:17:55 --> CodeIgniter\Database\Exceptions\DataException: There is no data to insert.
+[Method: POST, Route: tecnicos/guardar]
+in SYSTEMPATH\BaseModel.php on line 826.
+ 1 SYSTEMPATH\BaseModel.php(826): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\Controller_tecnicos.php(45): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 23:20:15 --> CodeIgniter\Database\Exceptions\DataException: There is no data to insert.
+[Method: POST, Route: tecnicos/guardar]
+in SYSTEMPATH\BaseModel.php on line 826.
+ 1 SYSTEMPATH\BaseModel.php(826): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+ 2 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([], true)
+ 3 APPPATH\Controllers\Controller_tecnicos.php(45): CodeIgniter\Model->insert([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->guardar()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 23:20:34 --> ErrorException: Array to string conversion
+[Method: POST, Route: tecnicos/guardar]
+in APPPATH\Controllers\Controller_tecnicos.php on line 46.
+ 1 APPPATH\Controllers\Controller_tecnicos.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Controllers\\Controller_tecnicos.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->guardar()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-13 23:24:54 --> ErrorException: Undefined array key "usuario"
+[Method: GET, Route: tecnicos]
+in APPPATH\Views\view_tecnicos_listar.php on line 30.
+ 1 APPPATH\Views\view_tecnicos_listar.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "usuario"', 'C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_listar.php', 30)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp_8.2.12\\htdocs\\app_incidencias\\app\\Views\\view_tecnicos_listar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_tecnicos_listar', [], true)
+ 5 APPPATH\Controllers\Controller_tecnicos.php(18): view('view_tecnicos_listar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

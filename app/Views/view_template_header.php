@@ -21,17 +21,23 @@
 
                 <!-- Incidencias -->
                 <li class="nav-item">
-                    <a class="nav-link <?php echo str_starts_with(current_url(), base_url("incidencias")) ? "active" : ""; ?>" href="<?php echo base_url("incidencias") ?>">Incidencias</a>
+                    <b>
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("incidencias")) ? "active" : ""; ?>" href="<?php echo base_url("incidencias") ?>">Incidencias</a>
+                    </b>
                 </li>
 
-                <!-- Áreas -->
+                <!-- Oficinas -->
                 <li class="nav-item">
-                    <a class="nav-link <?php echo str_starts_with(current_url(), base_url("areas")) ? "active" : ""; ?>" href="<?php echo base_url("areas") ?>">Áreas</a>
+                    <b>
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("oficinas")) ? "active" : ""; ?>" href="<?php echo base_url("oficinas") ?>">Oficinas</a>
+                    </b>
                 </li>
 
                 <!-- Estados -->
                 <li class="nav-item">
-                    <a class="nav-link <?php echo str_starts_with(current_url(), base_url("estados")) ? "active" : ""; ?>" href="<?php echo base_url("estados") ?>">Estados</a>
+                    <b>
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("tecnicos")) ? "active" : ""; ?>" href="<?php echo base_url("tecnicos") ?>">Técnicos</a>
+                    </b>
                 </li>
 
             </ul>
