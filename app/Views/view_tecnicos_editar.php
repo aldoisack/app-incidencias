@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-md-6 align-middle">
                     <br>
-                    <h4>Nuevo técnico</h4>
+                    <h4>ID:<?php echo $tecnico["id_usuario"] ?></h4>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">

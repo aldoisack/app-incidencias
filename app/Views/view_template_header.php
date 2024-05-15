@@ -40,6 +40,18 @@
                     </b>
                 </li>
 
+                <!-- Separator -->
+                <div class="nav-link"></div>
+                <div class="nav-link" style="color:rgb(155, 138, 113)">●</div>
+                <div class="nav-link"></div>
+
+                <!-- Perfiles -->
+                <li class="nav-item">
+                    <b>
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("perfiles")) ? "active" : ""; ?>" href="<?php echo base_url("perfiles") ?>">Perfiles</a>
+                    </b>
+                </li>
+
             </ul>
         </nav>
     </header>

@@ -8,5 +8,6 @@ class Model_perfiles extends Model
 {
     protected $table      = 'perfiles';
     // Uncomment below if you want add primary key
-    // protected $primaryKey = 'id';
+    protected $primaryKey = 'id_perfil';
+    protected $allowedFields = ["nombre_perfil"];
 }

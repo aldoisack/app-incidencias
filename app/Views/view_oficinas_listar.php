@@ -1,6 +1,6 @@
 <br>
 <main class="container">
-    <h2>Oficinas</h2>
+    <h2><b>Oficinas</b></h2>
     <div class="card">
         <div class="card-header">
             <a name="" id="" class="btn btn-primary" href="<?php echo base_url("oficinas/crear") ?>" role="button">Agregar oficina</a>
@@ -12,6 +12,7 @@
                         <tr>
                             <th scope="col">N°</th>
                             <th scope="col">Oficina</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -23,9 +24,9 @@
                             <tr class="">
                                 <td scope="row"> <?php echo $number ?></td>
                                 <td> <?php echo $registro["nombre_oficina"]; ?> </td>
+                                <td> <?php echo ($registro["id_estado"] == 1) ? "Habilitado" : "Inhabilitado"; ?> </td>
                                 <td>
-                                    <a name="" id="" class="btn btn-info" href="<?php echo base_url("oficinas/editar/" . $registro["id_oficina"]) ?>" role="button">Editar</a>
-                                    <a name="" id="" class="btn btn-danger" href="<?php echo base_url("oficinas/deshabilitar/" . $registro["id_oficina"]) ?>" role="button">Deshabilitar</a>
+                                    <a name="" id="" class="btn btn-warning" href="<?php echo base_url("oficinas/editar/" . $registro["id_oficina"]) ?>" role="button">Editar</a>
                                 </td>
                             </tr>
                         <?php
@@ -35,7 +36,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 </main>

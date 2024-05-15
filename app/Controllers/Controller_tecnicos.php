@@ -41,9 +41,21 @@ class Controller_tecnicos extends Controller
             "contrasenia" => $this->request->getVar("contrasenia"),
             "id_perfil" => $this->request->getVar("id_perfil"),
             "id_oficina" => $this->request->getVar("id_oficina"),
+            "id_estado" => $this->request->getVar("id_estado"),
         ];
         $tecnicos->insert($datos);
-        // echo $datos;
         return $this->response->redirect(base_url("tecnicos"));
+    }
+    public function editar($id_tecnico = null)
+    {
+        $tecnicos = new Model_tecnicos();
+        $datos["tecnico"] = $tecnicos->where("id_tecnico", $id_tecnico)->first();
+        return
+            view("view_template_header") .
+            view("view_tecnicos_editar", $datos) .
+            view("view_template_footer");
+    }
+    public function actualizar()
+    {
     }
 }

@@ -9,5 +9,5 @@ class Model_oficinas extends Model
     protected $table         = 'oficinas';
     // Uncomment below if you want add primary key
     protected $primaryKey    = 'id_oficina';
-    protected $allowedFields = ["nombre_oficina"];
+    protected $allowedFields = ["nombre_oficina", "id_estado"];
 }

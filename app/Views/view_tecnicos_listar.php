@@ -15,6 +15,7 @@
                             <th scope="col">Apellidos</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Contraseña</th>
+                            <th scope="col">Estado</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -29,9 +30,9 @@
                                 <td><?php echo $registro["apellidos"]; ?></td>
                                 <td><?php echo $registro["correo"]; ?></td>
                                 <td><?php echo $registro["contrasenia"]; ?></td>
+                                <td><?php echo ($registro["id_estado"] == 1) ? "Habilitado" : "Inhabilitado"; ?></td>
                                 <td>
                                     <a name="" id="" class="btn btn-info" href="<?php echo base_url("tecnicos/editar/" . $registro["id_usuario"]) ?>" role="button">Editar</a>
-                                    <a name="" id="" class="btn btn-danger" href="<?php echo base_url("tecnicos/deshabilitar/" . $registro["id_usuario"]) ?>" role="button">Deshabilitar</a>
                                 </td>
                             </tr>
                         <?php
