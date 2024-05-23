@@ -9,5 +9,5 @@ class Model_tecnicos extends Model
     protected $table      = 'usuarios';
     // Uncomment below if you want add primary key
     protected $primaryKey = 'id_usuario';
-    protected $allowedFields = ["nombres", "apellidos", "correo", "contrasenia", "id_perfil", "id_oficina"];
+    protected $allowedFields = ["nombres", "apellidos", "correo", "contrasenia", "id_perfil", "id_oficina", "id_estado"];
 }

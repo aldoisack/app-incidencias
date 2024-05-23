@@ -24,7 +24,7 @@
                                 <td scope="row"><?php echo $numero; ?></td>
                                 <td><?php echo $registro["nombre_perfil"]; ?></td>
                                 <td>
-                                    <a class="btn btn-warning" href="<?php echo base_url("perfiles/editar/" . $registro["id_perfil"]);  ?>" role=" button"></a>
+                                    <a class="btn btn-warning" href="<?php echo base_url("perfiles/editar/" . $registro["id_perfil"]);  ?>" role=" button">Editar</a>
                                 </td>
                             </tr>
                         <?php

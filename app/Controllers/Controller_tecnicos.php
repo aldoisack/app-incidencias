@@ -11,9 +11,13 @@ class Controller_tecnicos extends Controller
 {
     public function index()
     {
+        $perfiles = new Model_perfiles();
+        $perfil = $perfiles->where("nombre_perfil", "Técnico")->first();
+        $id_perfil = $perfil["id_perfil"];
         $tecnicos = new Model_tecnicos();
-        $datos["tecnicos"] = $tecnicos->where("id_perfil", 2)->orderBy("id_usuario", "ASC")->findAll();
+        $datos["tecnicos"] = $tecnicos->where("id_perfil", $id_perfil)->orderBy("id_usuario", "ASC")->findAll();
         return
+            view("view_template_head") .
             view("view_template_header") .
             view("view_tecnicos_listar", $datos) .
             view("view_template_footer");
@@ -26,6 +30,7 @@ class Controller_tecnicos extends Controller
         $datos["perfiles"] = $perfiles->orderBy("id_perfil", "ASC")->findAll();
         $datos["oficinas"] = $oficinas->orderBy("id_oficina", "ASC")->findAll();
         return
+            view("view_template_head") .
             view("view_template_header") .
             view("view_tecnicos_crear", $datos) .
             view("view_template_footer");
@@ -51,6 +56,7 @@ class Controller_tecnicos extends Controller
         $tecnicos = new Model_tecnicos();
         $datos["tecnico"] = $tecnicos->where("id_tecnico", $id_tecnico)->first();
         return
+            view("view_template_head") .
             view("view_template_header") .
             view("view_tecnicos_editar", $datos) .
             view("view_template_footer");

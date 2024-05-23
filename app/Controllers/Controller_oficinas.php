@@ -13,6 +13,7 @@ class Controller_oficinas extends Controller
         $oficinas = new Model_oficinas();
         $datos["oficinas"] = $oficinas->orderBy("id_oficina", "ASC")->findAll();
         return
+            view("view_template_head") .
             view("view_template_header") .
             view("view_oficinas_listar", $datos) .
             view("view_template_footer");
@@ -20,6 +21,7 @@ class Controller_oficinas extends Controller
     public function crear()
     {
         return
+            view("view_template_head") .
             view("view_template_header") .
             view("view_oficinas_crear") .
             view("view_template_footer");
@@ -39,6 +41,7 @@ class Controller_oficinas extends Controller
         $oficinas = new Model_oficinas();
         $datos["oficina"] = $oficinas->where("id_oficina", $id_oficina)->first();
         return
+            view("view_template_head") .
             view("view_template_header") .
             view("view_oficinas_editar", $datos) .
             view("view_template_footer");
