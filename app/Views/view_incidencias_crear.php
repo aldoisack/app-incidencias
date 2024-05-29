@@ -3,7 +3,7 @@
 
 <head>
 
-    <title>Reportar nueva incidencia - MDC</title>
+    <title>Generar nuevo ticket</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -18,6 +18,23 @@
 
     <header>
         <!-- place navbar here -->
+        <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-center">
+            <div class="nav navbar-nav">
+                <a 
+                    class="nav-item nav-link active"
+                    href="#"
+                    aria-current="page"
+                >
+                    Registrar ticket
+                </a>
+                <a
+                    class="nav-item nav-link"
+                    href="#"
+                >
+                    Seguimiento de ticket
+                </a>
+            </div>
+        </nav>
     </header>
 
     <br>
@@ -30,19 +47,41 @@
             </div>
 
             <div class="card-body">
+
                 <form action="<?php echo base_url("incidencias/guardar") ?>" method="post" enctype="multipart/form-data">
 
-                    <!-- Área -->
-                    <div class="mb-3">
-                        <label for="id_area" class="form-label">Área</label>
-                        <select class="form-select form-select-mb" name="id_area" id="id_area">
+                    <div class="row">
 
-                            <option selected>--- Select one ---</option>
-                            <?php foreach ($areas as $registro) { ?>
-                                <option value="<?php echo $registro["id_area"] ?>"><?php echo $registro["nombre_area"] ?></option>
-                            <?php } ?>
+                        <!-- Oficinas -->
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="id_oficina" class="form-label">Oficina</label>
+                                <select class="form-select form-select-mb" name="id_oficina" id="id_oficina">
 
-                        </select>
+                                    <option selected>--- Select one ---</option>
+                                    <?php foreach ($oficinas as $registro) { ?>
+                                        <option value="<?php echo $registro["id_oficina"] ?>">
+                                            <?php echo $registro["nombre_oficina"] ?>
+                                        </option>
+                                    <?php } ?>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="telefono"
+                                    id="telefono"
+                                />
+                            </div>
+                        </div>
+
                     </div>
 
                     <!-- Problema -->

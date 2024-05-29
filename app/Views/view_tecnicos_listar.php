@@ -32,7 +32,15 @@
                                 <td><?php echo $registro["contrasenia"]; ?></td>
                                 <td><?php echo ($registro["id_estado"] == 1) ? "Habilitado" : "Inhabilitado"; ?></td>
                                 <td>
-                                    <a name="" id="" class="btn btn-info" href="<?php echo base_url("tecnicos/editar/" . $registro["id_usuario"]) ?>" role="button">Editar</a>
+                                    <a 
+                                        name="" 
+                                        id="" 
+                                        class="btn btn-info" 
+                                        href="<?php echo base_url("tecnicos/editar/" . $registro["id_usuario"]) ?>" 
+                                        role="button"
+                                    >
+                                        Editar
+                                    </a>
                                 </td>
                             </tr>
                         <?php

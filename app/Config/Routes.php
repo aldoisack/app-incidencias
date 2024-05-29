@@ -7,12 +7,15 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 // Login
-$routes->get("/", "Controller_login::index");
+$routes->get("/", "Controller_login::login");
+$routes->get("/register", "Controller_login::register");
+$routes->post("/register/guardar", "Controller_login::guardar");
 
 // Incidencias
 $routes->get('incidencias', 'Controller_incidencias::index');
 $routes->get('incidencias/crear', 'Controller_incidencias::crear');
 $routes->post('incidencias/guardar', 'Controller_incidencias::guardar');
+$routes->get("incidencias/imprimirTicket/(:num)", "Controller_incidencias::imprimirTicket/$1");
 
 // Oficinas
 $routes->get('oficinas', 'Controller_oficinas::index');
@@ -31,7 +34,3 @@ $routes->get('tecnicos/editar/(:num)', 'Controller_tecnicos::editar');
 $routes->get("perfiles", "Controller_perfiles::index");
 $routes->get("perfiles/crear", "Controller_perfiles::crear");
 $routes->post("perfiles/guardar", "Controller_perfiles::guardar");
-
-// Testing
-$routes->get('testing/login', 'Controller_testing::login');
-$routes->get('testing/register', 'Controller_testing::register');
