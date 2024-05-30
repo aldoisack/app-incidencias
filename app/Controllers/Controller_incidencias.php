@@ -18,12 +18,14 @@ class Controller_incidencias extends Controller
             view("view_incidencias_listar") .
             view("view_template_footer");
     }
+
     public function crear()
     {
         $oficinas = new Model_oficinas();
         $datos["oficinas"] = $oficinas->orderBy("nombre_oficina", "ASC")->findAll();
         return view("view_incidencias_crear", $datos);
     }
+
     public function guardar()
     {
         # Obtenemos el registro con valor "Nuevo"
@@ -51,8 +53,9 @@ class Controller_incidencias extends Controller
         return $this->response->redirect(base_url("incidencias/imprimirTicket/" . $id_ticket));
     }
     
-    public function imprimirTicket($id_ticket){
+    public function imprimirTicket($id_ticket)
+    {
         $datos["id_ticket"] = $id_ticket;
-       return view("view_incidencias_imprimir_ticket", $datos); 
+        return view("view_incidencias_imprimir_ticket", $datos); 
     }
 }
