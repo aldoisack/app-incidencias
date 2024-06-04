@@ -1,0 +1,60 @@
+CRITICAL - 2024-05-30 21:55:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "view_template_head.php"
+[Method: GET, Route: tecnicos]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_template_head.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_template_head', [], true)
+ 3 APPPATH\Controllers\Controller_tecnicos.php(20): view('view_template_head')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_tecnicos->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_tecnicos))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-30 22:26:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "view_template_header.php"
+[Method: GET, Route: oficinas/actualizar/3]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_template_header.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('view_template_header', [], true)
+ 3 APPPATH\Controllers\Controller_oficinas.php(65): view('view_template_header')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->actualizar('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-30 22:27:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/view_template_header.php"
+[Method: GET, Route: oficinas/actualizar/3]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/view_template_header.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_template_header', [], true)
+ 3 APPPATH\Controllers\Controller_oficinas.php(65): view('admin/view_template_header')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->actualizar('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-30 22:27:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/view_admin__header.php"
+[Method: GET, Route: oficinas/actualizar/3]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/view_admin__header.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin__header', [], true)
+ 3 APPPATH\Controllers\Controller_oficinas.php(65): view('admin/view_admin__header')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->actualizar('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-30 22:27:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/view_admin_oficinas_editar.php"
+[Method: GET, Route: oficinas/actualizar/3]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/view_admin_oficinas_editar.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_oficinas_editar', [], true)
+ 3 APPPATH\Controllers\Controller_oficinas.php(66): view('admin/view_admin_oficinas_editar', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->actualizar('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

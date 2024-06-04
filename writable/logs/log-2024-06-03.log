@@ -1,0 +1,247 @@
+ERROR - 2024-06-03 03:24:44 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_incidencias' in /opt/lampp/htdocs/app_incidencias/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /opt/lampp/htdocs/app_incidencias/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_incidencias', 3306, '', 0)
+#1 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /opt/lampp/htdocs/app_incidencias/system/Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/app_incidencias/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /opt/lampp/htdocs/app_incidencias/app/Models/Model_usuarios.php(25): CodeIgniter\BaseModel->first()
+#7 /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_login.php(30): App\Models\Model_usuarios->verificar_correo('admin@admin.com')
+#8 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+#9 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+#10 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /opt/lampp/htdocs/app_incidencias/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 /opt/lampp/htdocs/app_incidencias/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /opt/lampp/htdocs/app_incidencias/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_incidencias' in /opt/lampp/htdocs/app_incidencias/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /opt/lampp/htdocs/app_incidencias/system/Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/app_incidencias/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 /opt/lampp/htdocs/app_incidencias/app/Models/Model_usuarios.php(25): CodeIgniter\BaseModel->first()
+#6 /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_login.php(30): App\Models\Model_usuarios->verificar_correo('admin@admin.com')
+#7 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+#8 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+#9 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/app_incidencias/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/app_incidencias/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/app_incidencias/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-03 03:24:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_incidencias'
+[Method: POST, Route: autenticar]
+in SYSTEMPATH/Database/BaseConnection.php on line 457.
+ 1 SYSTEMPATH/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuarios`
+WHERE `correo` = :correo:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/Model_usuarios.php(25): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/Controller_login.php(30): App\Models\Model_usuarios->verificar_correo('admin@admin.com')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-03 03:39:16 --> TypeError: Cannot access offset of type string on string
+[Method: POST, Route: autenticar]
+in APPPATH/Models/Model_usuarios.php on line 30.
+ 1 APPPATH/Controllers/Controller_login.php(33): App\Models\Model_usuarios->verificar_contrasenia('admin@admin.com', 'admin')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 10:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 10:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 10:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 10:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 19:24:41 --> BadMethodCallException: Call to undefined method App\Models\Model_usuarios::verificar_correo
+[Method: POST, Route: autenticar]
+in SYSTEMPATH/Model.php on line 921.
+ 1 APPPATH/Controllers/Controller_login.php(34): CodeIgniter\Model->__call('verificar_correo', [...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-03 19:32:01 --> ErrorException: Array to string conversion
+[Method: POST, Route: autenticar]
+in APPPATH/Controllers/Controller_login.php on line 35.
+ 1 APPPATH/Controllers/Controller_login.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_login.php', 35)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 19:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:32:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:33:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:47:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 19:47:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "template/view_template_head.php"
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('template/view_template_head.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('template/view_template_head', [], true)
+ 3 APPPATH/Controllers/Controller_incidencias.php(73): view('template/view_template_head')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 19:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 19:49:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "template/view_template_head.php"
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('template/view_template_head.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('template/view_template_head', [], true)
+ 3 APPPATH/Controllers/Controller_incidencias.php(73): view('template/view_template_head')
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 19:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 19:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 20:07:34 --> Error: Cannot use object of type App\Models\Model_perfiles as array
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Controllers/Controller_incidencias.php(71): App\Models\Model_perfiles->obtener_perfil(null)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 20:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 20:08:29 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Models/Model_perfiles.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/app_incidencias/app/Models/Model_perfiles.php', 16)
+ 2 APPPATH/Controllers/Controller_incidencias.php(71): App\Models\Model_perfiles->obtener_perfil(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 20:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:09:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 20:09:05 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Models/Model_perfiles.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/app_incidencias/app/Models/Model_perfiles.php', 16)
+ 2 APPPATH/Controllers/Controller_incidencias.php(71): App\Models\Model_perfiles->obtener_perfil(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 20:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 20:13:19 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Models/Model_perfiles.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/app_incidencias/app/Models/Model_perfiles.php', 16)
+ 2 APPPATH/Controllers/Controller_incidencias.php(71): App\Models\Model_perfiles->obtener_perfil(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 20:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 20:15:12 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Models/Model_perfiles.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/app_incidencias/app/Models/Model_perfiles.php', 16)
+ 2 APPPATH/Controllers/Controller_incidencias.php(71): App\Models\Model_perfiles->obtener_perfil(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 20:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:15:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 20:15:26 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Models/Model_perfiles.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/app_incidencias/app/Models/Model_perfiles.php', 16)
+ 2 APPPATH/Controllers/Controller_incidencias.php(71): App\Models\Model_perfiles->obtener_perfil(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 20:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 20:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 23:26:40 --> ErrorException: Undefined variable $Registro
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 20.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Registro', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 20)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(94): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-03 23:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:31:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-03 23:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-03 23:56:53 --> ErrorException: Array to string conversion
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

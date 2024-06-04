@@ -1,0 +1,520 @@
+CRITICAL - 2024-06-04 01:59:32 --> TypeError: Unsupported operand types: array + int
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Models/Model_asignaciones.php on line 17.
+ 1 APPPATH/Controllers/Controller_incidencias.php(44): App\Models\Model_asignaciones->asignar_tecnico()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 02:00:23 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, int given, called in /opt/lampp/htdocs/app_incidencias/system/BaseModel.php on line 1875
+[Method: POST, Route: incidencias/guardar]
+in SYSTEMPATH/BaseModel.php on line 1762.
+ 1 SYSTEMPATH/BaseModel.php(1875): CodeIgniter\BaseModel->timeToString(3)
+ 2 SYSTEMPATH/BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray(3, 'insert')
+ 3 SYSTEMPATH/Model.php(791): CodeIgniter\BaseModel->insert(3, true)
+ 4 APPPATH/Models/Model_asignaciones.php(17): CodeIgniter\Model->insert(3)
+ 5 APPPATH/Controllers/Controller_incidencias.php(44): App\Models\Model_asignaciones->asignar_tecnico()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 02:52:40 --> TypeError: Unsupported operand types: array + int
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Models/Model_asignaciones.php on line 18.
+ 1 APPPATH/Controllers/Controller_incidencias.php(44): App\Models\Model_asignaciones->asignar_tecnico()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 02:53:15 --> CodeIgniter\Database\Exceptions\DataException: Allowed fields must be specified for model: "App\Models\Model_asignaciones"
+[Method: POST, Route: incidencias/guardar]
+in SYSTEMPATH/Model.php on line 813.
+ 1 SYSTEMPATH/Model.php(813): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Model_asignaciones')
+ 2 SYSTEMPATH/BaseModel.php(821): CodeIgniter\Model->doProtectFieldsForInsert([...])
+ 3 SYSTEMPATH/Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+ 4 APPPATH/Models/Model_asignaciones.php(20): CodeIgniter\Model->insert([...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(44): App\Models\Model_asignaciones->asignar_tecnico()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 02:53:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "view_incidencias_imprimir_ticket.php"
+[Method: GET, Route: incidencias/imprimirTicket/4]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('view_incidencias_imprimir_ticket.php')
+ 2 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('view_incidencias_imprimir_ticket', [], true)
+ 3 APPPATH/Controllers/Controller_incidencias.php(60): view('view_incidencias_imprimir_ticket', [...])
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('4')
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 02:58:40 --> ErrorException: Array to string conversion
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 55.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php', 55)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:05:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:05:11 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Models/Model_perfiles.php on line 16.
+ 1 APPPATH/Models/Model_perfiles.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/opt/lampp/htdocs/app_incidencias/app/Models/Model_perfiles.php', 16)
+ 2 APPPATH/Controllers/Controller_incidencias.php(78): App\Models\Model_perfiles->obtener_perfil(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:07:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 03:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 03:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:07:26 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:38 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:40 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:40 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:40 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:40 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:41 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:41 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:41 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:41 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:22:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:22:41 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:23:03 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:23:04 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:23:04 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:23:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:23:04 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:23:05 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:23:05 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 03:51:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 03:51:55 --> TypeError: CodeIgniter\Database\BaseBuilder::hasOperator(): Argument #1 ($str) must be of type string, int given, called in /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php on line 785
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH/Database/BaseBuilder.php on line 3406.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(785): CodeIgniter\Database\BaseBuilder->hasOperator(1)
+ 2 SYSTEMPATH/Database/BaseBuilder.php(701): CodeIgniter\Database\BaseBuilder->whereHaving('QBWhere', true, null, 'AND ', true)
+ 3 SYSTEMPATH/Model.php(919): CodeIgniter\Database\BaseBuilder->where(true)
+ 4 APPPATH/Models/Model_incidencias.php(29): CodeIgniter\Model->__call('where', [...])
+ 5 APPPATH/Controllers/Controller_incidencias.php(83): App\Models\Model_incidencias->obtener_incidencias_nuevas()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 03:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:02:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 04:02:23 --> ErrorException: Undefined array key "id_incidencia"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 20.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_incidencia"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 20)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 04:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 04:03:47 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 18.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 18)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 04:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 04:04:19 --> ErrorException: foreach() argument must be of type array|object, null given
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 18.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, null given', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 18)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 04:05:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 04:05:54 --> ErrorException: Undefined array key "id_incidencia"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 20.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_incidencia"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 20)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 04:06:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 04:06:29 --> ErrorException: Undefined array key "id_incidencia"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 20.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_incidencia"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 20)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 04:06:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:07:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:07:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:08:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:08:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:15:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 04:15:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:09:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:09:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 00:12:12 --> ErrorException: Undefined variable $oficinas
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficinas', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 00:12:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 00:12:21 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(95): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 00:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 00:13:15 --> ErrorException: Undefined array key "id_oficina"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_oficina"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 00:13:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:20:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 00:20:55 --> ErrorException: Undefined variable $id_oficina
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_oficina', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 00:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:25:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 00:25:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 15:52:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 15:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 15:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 15:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 15:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

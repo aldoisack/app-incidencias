@@ -19,41 +19,33 @@ class Controller_login extends Controller
 
     public function autenticar()
     {
-        $sesion = session();
-        print_r($sesion);
-
-        $usuarios = new Model_usuarios();
-
+        // Obteniendo datos del formulario
         $correo      = $this->request->getVar("correo");
         $contrasenia = $this->request->getVar("contrasenia");
 
-        $el_usuario_esta_registrado = $usuarios->obtener_correo($correo);
-        echo "Este es el correo:" . $correo;
-        echo "Esta es la contraseña" . $contrasenia;
-        echo "Antes del if";
+        /**
+         * Objeto de la tabla usuarios.
+         * Será de utilidad para buscar el usuario
+         */
+        $tabla_usuarios = new Model_usuarios();
 
-        if ($el_usuario_esta_registrado) {
+        // Buscamos el correo en la base de datos
+        $usuario = $tabla_usuarios->verificar($correo, $contrasenia);
 
-            echo "Dentro del if";
+        if ($usuario) {
 
-            if ($contrasenia == $el_usuario_esta_registrado["contrasenia"]) {
+            $sesion = session();
 
-                $datos_de_sesion = [
-                    "id_perfil" => $el_usuario_esta_registrado["id_perfil"],
-                    "logueado" => true,
-                ];
+            $datos = [
+                "id_perfil" => $usuario["id_perfil"],
+                "logueado" => true,
+            ];
 
-                $sesion->set($datos_de_sesion);
+            $sesion->set($datos);
 
-                echo $sesion["logueado"];
-
-                // return $this->response->redirect(base_url("/incidencias/leer"));
-
-            }
+            return $this->response->redirect("incidencias/leer");
         } else {
-
-            // return $this->response->redirect(base_url("/incidencias/leer"));
-
+            echo "Credenciales incorrectas";
         }
     }
 

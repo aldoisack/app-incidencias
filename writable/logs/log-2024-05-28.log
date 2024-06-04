@@ -1,0 +1,148 @@
+CRITICAL - 2024-05-28 00:09:45 --> ErrorException: Array to string conversion
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 40.
+ 1 APPPATH/Controllers/Controller_incidencias.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php', 40)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:10:43 --> ErrorException: Array to string conversion
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 43.
+ 1 APPPATH/Controllers/Controller_incidencias.php(43): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php', 43)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:11:43 --> ErrorException: Array to string conversion
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 32.
+ 1 APPPATH/Controllers/Controller_incidencias.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php', 32)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:48:51 --> Error: Object of class App\Models\Model_incidencias could not be converted to string
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 48.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:49:53 --> Error: Object of class App\Models\Model_incidencias could not be converted to string
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 48.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:50:57 --> Error: Object of class App\Models\Model_incidencias could not be converted to string
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 48.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:54:38 --> Error: Object of class App\Models\Model_incidencias could not be converted to string
+[Method: POST, Route: incidencias/guardar]
+in APPPATH/Controllers/Controller_incidencias.php on line 48.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 00:59:02 --> ParseError: syntax error, unexpected token "}", expecting "," or ";"
+[Method: GET, Route: incidencias/crear]
+in APPPATH/Controllers/Controller_incidencias.php on line 51.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('/opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Controller_incidencias')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Controller_incidencias')
+ 4 SYSTEMPATH/CodeIgniter.php(887): class_exists('\\App\\Controllers\\Controller_incidencias', true)
+ 5 SYSTEMPATH/CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:41:56 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/6]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '6')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('6')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:43:22 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/6]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '6')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('6')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:43:39 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/6]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '6')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('6')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:48:05 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/6]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '6')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('6')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:48:08 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/6]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '6')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('6')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:49:07 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/6]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '6')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('6')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-05-28 04:49:37 --> TypeError: view(): Argument #2 ($data) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_incidencias.php on line 55
+[Method: GET, Route: incidencias/imprimirTicket/8]
+in SYSTEMPATH/Common.php on line 1159.
+ 1 APPPATH/Controllers/Controller_incidencias.php(55): view('view_incidencias_imprimir_ticket', '8')
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->imprimirTicket('8')
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

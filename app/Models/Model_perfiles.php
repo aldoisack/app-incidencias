@@ -7,7 +7,12 @@ use CodeIgniter\Model;
 class Model_perfiles extends Model
 {
     protected $table      = 'perfiles';
-    // Uncomment below if you want add primary key
     protected $primaryKey = 'id_perfil';
     protected $allowedFields = ["nombre_perfil"];
+
+    public function obtener_perfil($id_perfil)
+    {
+        $perfil = $this->where("id_perfil", $id_perfil)->first();
+        return $perfil["nombre_perfil"];
+    }
 }

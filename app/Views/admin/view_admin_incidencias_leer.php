@@ -7,40 +7,25 @@
             <thead>
                 <tr>
                     <th scope="col">Ticket ID</th>
-                    <th scope="col">Área</th>
+                    <th scope="col">Oficina</th>
                     <th scope="col">Problema</th>
                     <th scope="col">Estado</th>
+                    <th scope="col">Técnico</th>
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="">
-                    <td scope="row">0001</td>
-                    <td>Tesorería</td>
-                    <td>No puedo imprimir</td>
-                    <td>To do</td>
-                    <td>
-                        <button type="button" class="btn btn-primary mb-2">Tomar</button>
-                    </td>
-                </tr>
-                <tr class="">
-                    <td scope="row">0002</td>
-                    <td>Administración</td>
-                    <td>No tengo internet</td>
-                    <td>To do</td>
-                    <td>
-                        <button type="button" class="btn btn-primary mb-2">Tomar</button>
-                    </td>
-                </tr>
-                <tr class="">
-                    <td scope="row">0003</td>
-                    <td>Infraestructura</td>
-                    <td>Las impresiones salen negras</td>
-                    <td>To do</td>
-                    <td>
-                        <button type="button" class="btn btn-primary mb-2">Tomar</button>
-                    </td>
-                </tr>
+                <?php foreach ($incidencias_nuevas as $registro) { ?>
+                    <tr class="">
+                        <td scope="row"> <?php echo $registro["id_incidencia"] ?></td>
+                        <td><?php $oficinas[array_search($registro["id_oficina"], array_column($oficinas, 'id_oficina'))]['nombre_oficina']; ?></td>
+                        <td>No puedo imprimir</td>
+                        <td>To do</td>
+                        <td>
+                            <button type="button" class="btn btn-primary mb-2">Tomar</button>
+                        </td>
+                    </tr>
+                <?php } ?>
             </tbody>
         </table>
     </div>

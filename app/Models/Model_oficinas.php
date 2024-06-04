@@ -10,4 +10,9 @@ class Model_oficinas extends Model
     // Uncomment below if you want add primary key
     protected $primaryKey    = 'id_oficina';
     protected $allowedFields = ["nombre_oficina", "id_estado"];
+
+    public function obtener_oficinas()
+    {
+        return $this->findAll();
+    }
 }
