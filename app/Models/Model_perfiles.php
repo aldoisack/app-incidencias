@@ -15,4 +15,9 @@ class Model_perfiles extends Model
         $perfil = $this->where("id_perfil", $id_perfil)->first();
         return $perfil["nombre_perfil"];
     }
+
+    public function obtener_perfiles()
+    {
+        return $this->findAll();
+    }
 }

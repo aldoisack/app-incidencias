@@ -518,3 +518,234 @@ INFO - 2024-06-04 15:52:10 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-04 15:52:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-04 15:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-04 15:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:36:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 18:36:16 --> ErrorException: Undefined array key "id_pefil"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pefil"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 18:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 18:36:34 --> ErrorException: Undefined array key "id_pefil"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pefil"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 18:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 18:39:13 --> ErrorException: Undefined array key "id_pefil"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pefil"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 18:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 18:39:46 --> ErrorException: Undefined array key "id_pefil"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 21.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_pefil"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 21)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 18:42:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 18:48:43 --> Error: Cannot use object of type App\Models\Model_oficinas as array
+[Method: GET, Route: incidencias/obtener_oficina/4]
+in APPPATH/Controllers/Controller_incidencias.php on line 126.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->obtener_oficina('4')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 18:49:46 --> Error: Cannot use object of type App\Models\Model_oficinas as array
+[Method: GET, Route: incidencias/obtener_oficina/4]
+in APPPATH/Controllers/Controller_incidencias.php on line 126.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->obtener_oficina('4')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 18:49:59 --> Error: Cannot use object of type App\Models\Model_oficinas as array
+[Method: GET, Route: incidencias/obtener_oficina/4]
+in APPPATH/Controllers/Controller_incidencias.php on line 126.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->obtener_oficina('4')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-04 18:50:13 --> Error: Cannot use object of type App\Models\Model_oficinas as array
+[Method: GET, Route: incidencias/obtener_oficina/4]
+in APPPATH/Controllers/Controller_incidencias.php on line 126.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->obtener_oficina('4')
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 18:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:51:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 18:51:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:05:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 20:06:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 21:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:00:14 --> ErrorException: Undefined variable $registros
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 55.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $registros', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 55)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(96): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:18:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:26:51 --> ErrorException: Undefined variable $estados
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 32.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $estados', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 32)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(98): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:27:12 --> ErrorException: Undefined variable $registro_estado
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 33.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $registro_estado', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 33)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(98): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:27:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:27:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:27:52 --> ErrorException: Undefined array key "nombre_estado"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 34.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre_estado"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 34)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(98): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:29:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:29:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:36:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:36:19 --> ErrorException: Undefined variable $tecnicos
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 51.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tecnicos', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 51)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(100): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:37:50 --> ErrorException: Undefined array key "id_usaurio"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 52.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_usaurio"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 52)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(100): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:38:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-04 23:38:06 --> ErrorException: Undefined array key "nombre"
+[Method: GET, Route: incidencias/leer]
+in APPPATH/Views/admin/view_admin_incidencias_leer.php on line 53.
+ 1 APPPATH/Views/admin/view_admin_incidencias_leer.php(53): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nombre"', '/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php', 53)
+ 2 SYSTEMPATH/View/View.php(234): include('/opt/lampp/htdocs/app_incidencias/app/Views/admin/view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH/Controllers/Controller_incidencias.php(100): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-04 23:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-04 23:44:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

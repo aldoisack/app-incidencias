@@ -13,16 +13,14 @@ use Models\Model_incidencia;
 
 class Controller_incidencias extends Controller
 {
-    public $id_usuario, $perfil, $logueado;
-
     public function __construct()
     {
-        $this->validar_sesion();
+        $this->obtener_datos_sesion();
     }
 
-    // ----------------------------------------------------------------
-    // CREAR
-    // ----------------------------------------------------------------
+    // -------------------------
+    // Crear
+    // -------------------------
 
     public function crear()
     {
@@ -67,32 +65,60 @@ class Controller_incidencias extends Controller
         return view("view_incidencias_imprimir_ticket", $datos);
     }
 
-    // ----------------------------------------------------------------
-    // LEER
-    // ----------------------------------------------------------------
+    // -------------------------
+    // Leer
+    // -------------------------
 
     public function leer()
     {
-        $datos["incidencias_pendientes"] = (new Model_incidencias())->obtener_incidencias_pendientes();
-        $datos["incidencias_nuevas"]     = (new Model_incidencias())->obtener_incidencias_nuevas();
+        $sesion = session();
 
-        echo view("templates/view_template_head");
+        $usuario  = $sesion->get("usuario");
+        $perfil   = $sesion->get("perfil");
+        $logueado = $sesion->get("logueado");
 
-        switch ($this->perfil) {
+        if ($this->esta_logueado()) {
 
-            case 'admin':
-                echo view("admin/view_admin_header");
-                echo view("admin/view_admin_incidencias_leer", $datos);
-                break;
+            $usuario = session()->get("usuario");
+            $perfiles = (new Model_perfiles())->obtener_perfiles();
 
-            case 'tecnico':
-                break;
+            $datos["incidencias_nuevas"] = (new Model_incidencias())->obtener_incidencias_nuevas();
+            $datos["incidencias_pendientes"] = (new Model_incidencias())->obtener_incidencias_pendientes();
 
-            case 'usuario':
-                break;
+
+            echo ("INCIDENCIAS NUEVAS:");
+            echo ("\n");
+            print_r($datos["incidencias_nuevas"]);
+
+            echo ("INCIDENCIAS PENDIENTES:");
+            print("");
+            print_r($datos["incidencias_pendientes"]);
+
+            // Header
+            echo view("templates/view_template_head");
+
+            switch ($perfiles["nombre_perfil"]) {
+                case 'admin':
+                    // ----------------------------------------------------------
+                    // Admin
+                    // ----------------------------------------------------------
+                    echo view("admin/view_admin_header");
+                    echo view("admin/view_admin_incidencias_leer", $datos);
+                    break;
+                case 'tecnico':
+                    // ----------------------------------------------------------
+                    // Técnico
+                    // ----------------------------------------------------------
+                    break;
+                case 'usuario':
+                    break;
+            }
+
+            // Footer
+            echo view("templates/view_template_footer");
+        } else {
+            return $this->response->redirect(base_url());
         }
-
-        echo view("templates/view_template_footer");
     }
 
     // -------------------------
@@ -111,16 +137,9 @@ class Controller_incidencias extends Controller
         return $nombre_oficina;
     }
 
-    public function validar_sesion()
+    public function obtener_datos_sesion()
     {
-        $this->id_usuario = session()->get("id_usuario");
-        $this->perfil     = session()->get("perfil");
-        $this->logueado   = session()->get("logueado");
-
-        $this->response = service("response");
-
-        if (!$this->logueado) {
-            return $this->response->redirect(base_url());
-        }
+        return session()->get("logueado");
     }
 }
+

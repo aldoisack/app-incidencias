@@ -1,9 +1,74 @@
 <br>
 
-<!-- Vista de tabla solo para pantallas de escritorio (utiliza la resolución) -->
 <main class="container">
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- Incidencias pendientes -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <?php if ($incidencias_pendientes != null) { ?>
+
+        <h2>Incidencias pendientes</h2>
+
+        <div class="table-responsive col-lg-12 d-none d-lg-block">
+
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Ticket ID</th>
+                        <th scope="col">Oficina</th>
+                        <th scope="col">Problema</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Técnico</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($incidencias_pendientes as $registro) { ?>
+                        <tr class="">
+
+                            <!-- Ticket ID -->
+                            <td scope="row"> <?php echo $registro["id_incidencia"]; ?></td>
+
+                            <!-- Oficinas -->
+                            <td> <?php echo $registro["nombre_oficina"]; ?> </td>
+
+                            <!-- Problema -->
+                            <td> <?php echo $registro["problema"]; ?> </td>
+
+                            <!-- Estado -->
+                            <td> <?php echo $registro["nombre_estado"]; ?> </td>
+
+                            <!-- Tecnicos -->
+                            <td> <?php echo $registro["nombres"]; ?> </td>
+
+                            <!-- Botones -->
+                            <td>
+                                <button type="button" class="btn btn-primary mb-2">Tomar</button>
+                            </td>
+
+                        </tr>
+                    <?php } ?>
+                </tbody>
+
+            </table>
+        </div>
+
+    <?php } ?>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- Incidencias nuevas -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <!-- Vista de escritorio -->
     <div class="table-responsive col-lg-12 d-none d-lg-block">
+
+        <h2>Incidencias nuevas</h2>
+
         <table class="table">
+
             <thead>
                 <tr>
                     <th scope="col">Ticket ID</th>
@@ -14,23 +79,38 @@
                     <th scope="col">Acciones</th>
                 </tr>
             </thead>
+
             <tbody>
                 <?php foreach ($incidencias_nuevas as $registro) { ?>
                     <tr class="">
-                        <td scope="row"> <?php echo $registro["id_incidencia"] ?></td>
-                        <td><?php $oficinas[array_search($registro["id_oficina"], array_column($oficinas, 'id_oficina'))]['nombre_oficina']; ?></td>
-                        <td>No puedo imprimir</td>
-                        <td>To do</td>
+
+                        <!-- Ticket ID -->
+                        <td scope="row"> <?php echo $registro["id_incidencia"]; ?></td>
+
+                        <!-- Oficinas -->
+                        <td> <?php echo $registro["nombre_oficina"]; ?> </td>
+
+                        <!-- Problema -->
+                        <td> <?php echo $registro["problema"]; ?> </td>
+
+                        <!-- Estado -->
+                        <td> <?php echo $registro["nombre_estado"]; ?> </td>
+
+                        <!-- Tecnicos -->
+                        <td> <?php echo $registro["nombres"]; ?> </td>
+
+                        <!-- Botones -->
                         <td>
                             <button type="button" class="btn btn-primary mb-2">Tomar</button>
                         </td>
+
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
 
-    <!-- Vista de tarjetas solo para celulares (utiliza la resolución) -->
+    <!-- Vista de celulares -->
     <div class="card col-12 d-block d-lg-none">
         <div class="card-body">
             <h4 class="card-title">Tesorería</h4>

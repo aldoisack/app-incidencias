@@ -24,8 +24,17 @@ class Model_usuarios extends Model
     public function verificar($correo, $contrasenia)
     {
         return $this
-            ->where("correo", $correo)
-            ->where("contrasenia", $contrasenia)
+            ->select("usuarios.*, perfiles.nombre_perfil")
+            ->join("perfiles", "usuarios.id_perfil = perfiles.id_perfil")
+            ->where("usuarios.correo", $correo)
+            ->where("usuarios.contrasenia", $contrasenia)
             ->first();
+    }
+
+    public function obtener_tecnicos()
+    {
+        $perfiles = new Model_perfiles();
+        $perfil_tecnico = $perfiles->where("nombre_perfil", "Técnico")->first();
+        return $this->where("id_perfil", $perfil_tecnico["id_perfil"])->findAll();
     }
 }

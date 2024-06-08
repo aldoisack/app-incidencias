@@ -23,26 +23,22 @@ class Controller_login extends Controller
         $correo      = $this->request->getVar("correo");
         $contrasenia = $this->request->getVar("contrasenia");
 
-        /**
-         * Objeto de la tabla usuarios.
-         * Será de utilidad para buscar el usuario
-         */
-        $tabla_usuarios = new Model_usuarios();
-
         // Buscamos el correo en la base de datos
-        $usuario = $tabla_usuarios->verificar($correo, $contrasenia);
+        $usuario = (new Model_usuarios())->verificar($correo, $contrasenia);
 
         if ($usuario) {
 
             $sesion = session();
 
             $datos = [
-                "id_perfil" => $usuario["id_perfil"],
-                "logueado" => true,
+                "id_usuario" => $usuario["id_usuario"],
+                "perfil"     => $usuario["nombre_perfil"],
+                "logueado"   => true,
             ];
 
             $sesion->set($datos);
 
+            // print_r($sesion->get("perfil"));
             return $this->response->redirect("incidencias/leer");
         } else {
             echo "Credenciales incorrectas";
@@ -85,6 +81,13 @@ class Controller_login extends Controller
 
         $usuarios->insert($datos);
 
+        return $this->response->redirect(base_url());
+    }
+
+    public function cerrar_sesion()
+    {
+        $sesion = session();
+        $sesion->destroy();
         return $this->response->redirect(base_url());
     }
 }

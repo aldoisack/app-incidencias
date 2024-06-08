@@ -11,6 +11,7 @@ $routes->get("/", "Controller_login::login");
 $routes->post("/autenticar", "Controller_login::autenticar");
 $routes->get("/register", "Controller_login::register");
 $routes->post("/register/guardar", "Controller_login::guardar");
+$routes->get("/cerrar_sesion", "Controller_login::cerrar_sesion");
 
 // -------------------------------------------
 // Incidencias
@@ -44,6 +45,12 @@ $routes->get('tecnicos/actualizar/(:num)', 'Controller_tecnicos::actualizar/$1')
 
 $routes->post('tecnicos/guardar', 'Controller_tecnicos::guardar');
 $routes->post('tecnicos/guardar_cambios', 'Controller_tecnicos::guardar_cambios');
+
+// ---------------------------------------------------------
+// Extras 
+// ---------------------------------------------------------
+
+$routes->get("incidencias/obtener_oficina/(:num)", "Controller_incidencias::obtener_oficina/$1");
 
 // Perfiles
 // $routes->get("perfiles", "Controller_perfiles::index");

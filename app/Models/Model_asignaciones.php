@@ -13,7 +13,7 @@ class Model_asignaciones extends Model
 
     public function asignar_tecnico()
     {
-        $ultima_asignacion = $this->first();
+        $ultima_asignacion = $this->orderBy("id_asignacion", "DESC")->first();
         $datos = [
             "id_usuario" => $ultima_asignacion["id_usuario"] + 1
         ];
