@@ -1,10 +1,6 @@
 <br>
 
-<form
-    action="<?php echo base_url("oficinas/guardar_cambios") ?>"
-    method="post"
-    enctype="multipart/form-data"
->
+<form action="<?php echo base_url("incidencias/guardar_cambios") ?>" method="post" enctype="multipart/form-data">
 
     <!-- ----------------------------------- -->
     <!-- ID oficina -->
@@ -16,92 +12,96 @@
         y saber qué registro actualizar
     -->
     <div class="mb-3">
-        <input
-            type="hidden"
-            class="form-control"
-            name="id_oficina"
-            id="id_oficina"
-            value="<?php echo $oficina["id_oficina"]; ?>"
-        />
+        <input type="hidden" class="form-control" name="id_oficina" id="id_oficina" value="<?php echo $incidencia["id_incidencia"]; ?>" />
     </div>
 
 
     <main class="container">
         <div class="card">
 
-        
+
             <div class="card-header">
                 <div class="row">
 
 
                     <!-- ----------------------------------- -->
-                    <!-- Título ID -->
+                    <!-- Ticket ID -->
                     <!-- ----------------------------------- -->
 
-                    <div class="col-md-6 align-middle">
-                        <br>
-                        <h4>ID: <?php echo $oficina["id_oficina"]; ?></h4>
-                    </div>
-
-
-                    <!-- ----------------------------------- -->
-                    <!-- Estado -->
-                    <!-- ----------------------------------- -->
-                    
                     <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="id_estado" class="form-label">Estado</label>
-                            <select class="form-select form-select-mg" name="id_estado" id="id_estado">
-
-
-                                <option
-                                    value="1"
-                                    <?php echo ($oficina["id_estado"] == 1) ? "selected" : ""; ?> 
-                                >
-                                    Habilitado
-                                </option>
-
-
-                                <option
-                                    value="2"
-                                    <?php echo ($oficina["id_estado"] == 2) ? "selected" : ""; ?>
-                                >
-                                    Inhabilitado
-                                </option>
-
-
-                            </select>
-                        </div>
+                        <h4>Ticket ID: <?php echo $incidencia["id_incidencia"]; ?></h4>
+                        <h6><?php echo $incidencia["id_estado"] ?></h6>
                     </div>
 
-                    
+
+                    <!-- ----------------------------------- -->
+                    <!-- Hora + Botón finalizar -->
+                    <!-- ----------------------------------- -->
+
+                    <div class="col-md-6">
+                        <h5>Inicio: <?php echo $incidencia["fecha_inicio"] ?></h5>
+                        <h5>Fin : <?php echo $incidencia["fecha_fin"] ?></h5>
+                        <a class="btn btn-primary" href="#" role="button">Finalizar</a>
+                    </div>
+
+
                 </div>
             </div>
+
 
 
             <div class="card-body">
 
+                <form action="<?php echo base_url("incidencias/guardar_cambios") ?>" method="post" enctype="multipart/form-data">
 
-                <!-- ----------------------------------- -->
-                <!-- Nombre oficina-->
-                <!-- ----------------------------------- -->
+                    <div class="row">
 
-                <div class="mb-3">
-                    <label for="nombre_oficina" class="form-label">Nombre</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        name="nombre_oficina"
-                        id="nombre_oficina"
-                        value="<?php echo $oficina["nombre_oficina"]; ?>"
-                    />
-                </div>
+                        <!-- Oficinas -->
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="id_oficina" class="form-label">Oficina</label>
+                                <select class="form-select form-select-mb" name="id_oficina" id="id_oficina">
 
-                
-                <button type="submit" class="btn btn-success">Guardar</button>
+                                    <?php foreach ($oficinas as $registro) { ?>
+                                        <option value="<?php echo $registro["id_oficina"] ?>" <?php echo ($registro["id_oficina"] = $incidencia["id_oficina"]) ? "selected" : "" ?>>
+                                            <?php echo $registro["nombre_oficina"] ?>
+                                        </option>
+                                    <?php } ?>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $incidencia["telefono"]; ?>" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Problema -->
+                    <div class="mb-3">
+                        <label for="problema" class="form-label">Problema</label>
+                        <textarea class="form-control" name="problema" id="problema" rows="3"><?php echo $incidencia["problema"]; ?></textarea>
+                    </div>
+
+                    <!-- Detalle -->
+                    <div class="mb-3">
+                        <label for="detalle" class="form-label">Detalle</label>
+                        <textarea class="form-control" name="detalle" id="detalle" rows="3"></textarea>
+                    </div>
+
+                    <!-- Botones -->
+                    <button type="submit" class="btn btn-success">Guardar</button>
+                    <a class="btn btn-primary" href="<?php echo base_url("/incidencias/leer"); ?>" role="button">Regresar</a>
 
 
+                </form>
             </div>
+        </div>
 
 
         </div>

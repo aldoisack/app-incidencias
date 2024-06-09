@@ -18,6 +18,14 @@ class Model_incidencias extends Model
         "id_usuario"
     ];
 
+    /**
+     * Busca una incidencia por su ID
+     */
+    public function obtener_incidencia($id_incidencia)
+    {
+        return $this->where("id_incidencia", $id_incidencia)->first();
+    }
+
     public function obtener_incidencias_pendientes()
     {
         $dia_actual = date("Y-m-d");

@@ -53,3 +53,466 @@ INFO - 2024-06-08 16:24:57 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-08 16:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-08 16:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-08 16:25:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-08 18:17:29 --> mysqli_sql_exception: Unknown column 'incidencias.fecha_inicio' in 'where clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(31): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(76): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-08 18:17:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.fecha_inicio' in 'where clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND `incidencias`.`fecha_inicio` != :incidencias.fecha_inicio:', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(31): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(76): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 18:17:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.fecha_inicio' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND `incidencias`.`fecha_inicio` != \'2024-06-08\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND `incidencias`.`fecha_inicio` != \'2024-06-08\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND `incidencias`.`fecha_inicio` != :incidencias.fecha_inicio:', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(31): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(76): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 18:17:29 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.fecha_inicio' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND `incidencias`.`fecha_inicio` != \'2024-06-08\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND `incidencias`.`fecha_inicio` != \'2024-06-08\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND `incidencias`.`fecha_inicio` != \'2024-06-08\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`id_usuario`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_usuario` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND `incidencias`.`fecha_inicio` != :incidencias.fecha_inicio:', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(31): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(76): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 18:20:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:20:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 18:29:34 --> ErrorException: Undefined array key "id_incidencias"
+[Method: GET, Route: incidencias/leer]
+in APPPATH\Views\admin\view_admin_incidencias_leer.php on line 49.
+ 1 APPPATH\Views\admin\view_admin_incidencias_leer.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_incidencias"', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_leer.php', 49)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_leer.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_leer', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(85): view('admin/view_admin_incidencias_leer', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 18:29:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:49:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 18:49:32 --> ErrorException: Undefined variable $oficina
+[Method: GET, Route: incidencias/actualizar/5]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 24.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficina', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 18:50:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 18:50:53 --> ErrorException: Undefined variable $oficina
+[Method: GET, Route: incidencias/actualizar/5]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 33.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficina', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 33)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 18:51:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 18:51:17 --> ErrorException: Undefined variable $id_incidencia
+[Method: GET, Route: incidencias/actualizar/5]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 33.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_incidencia', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 33)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 18:51:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 18:51:30 --> ErrorException: Undefined variable $oficina
+[Method: GET, Route: incidencias/actualizar/5]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 47.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficina', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 47)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 18:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 18:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 18:52:13 --> ErrorException: Undefined variable $oficina
+[Method: GET, Route: incidencias/actualizar/9]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 47.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficina', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 47)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('9')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 19:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 19:35:11 --> ErrorException: Undefined variable $oficina
+[Method: GET, Route: incidencias/actualizar/9]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 58.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficina', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 58)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('9')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 19:35:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:38:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:42:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 19:44:53 --> ErrorException: Undefined variable $oficinas
+[Method: GET, Route: incidencias/actualizar/9]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 67.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficinas', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 67)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('9')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 19:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-08 19:45:07 --> ErrorException: Undefined variable $oficinas
+[Method: GET, Route: incidencias/actualizar/9]
+in APPPATH\Views\admin\view_admin_incidencias_actualizar.php on line 66.
+ 1 APPPATH\Views\admin\view_admin_incidencias_actualizar.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $oficinas', 'C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php', 66)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp-8.2.12\\htdocs\\app_incidencias\\app\\Views\\admin\\view_admin_incidencias_actualizar.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/view_admin_incidencias_actualizar', [], true)
+ 5 APPPATH\Controllers\Controller_incidencias.php(112): view('admin/view_admin_incidencias_actualizar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->actualizar('9')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 19:48:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 19:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:33:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:33:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:35:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:39:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-08 20:41:07 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`)) in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('UPDATE `oficina...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `oficina...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `oficina...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficina...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(1028): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(854): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', Array)
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-08 20:41:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`))
+[Method: POST, Route: oficinas/guardar_cambios]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficinas` SET `nombre_oficina` = :nombre_oficina:, `id_estado` = :id_estado:
+WHERE `oficinas`.`id_oficina` IN :oficinas.id_oficina:', [...], false)
+ 2 SYSTEMPATH\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 20:41:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficinas` SET `nombre_oficina` = :nombre_oficina:, `id_estado` = :id_estado:
+WHERE `oficinas`.`id_oficina` IN :oficinas.id_oficina:', [...], false)
+ 4 SYSTEMPATH\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 20:41:07 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficinas` SET `nombre_oficina` = :nombre_oficina:, `id_estado` = :id_estado:
+WHERE `oficinas`.`id_oficina` IN :oficinas.id_oficina:', [...], false)
+ 5 SYSTEMPATH\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-08 20:41:33 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`)) in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('UPDATE `oficina...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `oficina...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `oficina...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficina...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(1028): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(854): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', Array)
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-08 20:41:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`))
+[Method: POST, Route: oficinas/guardar_cambios]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficinas` SET `nombre_oficina` = :nombre_oficina:, `id_estado` = :id_estado:
+WHERE `oficinas`.`id_oficina` IN :oficinas.id_oficina:', [...], false)
+ 2 SYSTEMPATH\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 20:41:33 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficinas` SET `nombre_oficina` = :nombre_oficina:, `id_estado` = :id_estado:
+WHERE `oficinas`.`id_oficina` IN :oficinas.id_oficina:', [...], false)
+ 4 SYSTEMPATH\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-08 20:41:33 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_incidencias`.`oficinas`, CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_estado`) REFERENCES `estados` (`id_estado`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `oficinas` SET `nombre_oficina` = NULL, `id_estado` = NULL
+WHERE `oficinas`.`id_oficina` IN (\'11\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2497): CodeIgniter\Database\BaseConnection->query('UPDATE `oficinas` SET `nombre_oficina` = :nombre_oficina:, `id_estado` = :id_estado:
+WHERE `oficinas`.`id_oficina` IN :oficinas.id_oficina:', [...], false)
+ 5 SYSTEMPATH\Model.php(450): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\Controller_oficinas.php(82): CodeIgniter\Model->update('11', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_oficinas->guardar_cambios()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_oficinas))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-08 20:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-08 20:42:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

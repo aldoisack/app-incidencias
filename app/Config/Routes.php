@@ -18,7 +18,7 @@ $routes->get("/cerrar_sesion", "Controller_login::cerrar_sesion");
 // -------------------------------------------
 $routes->get('incidencias/crear', 'Controller_incidencias::crear');
 $routes->get('incidencias/leer', 'Controller_incidencias::leer');
-$routes->get('incidencias/actualizar', 'Controller_incidencias::actualizar');
+$routes->get('incidencias/actualizar/(:num)', 'Controller_incidencias::actualizar/$1');
 
 $routes->post('incidencias/guardar', 'Controller_incidencias::guardar');
 $routes->post('incidencias/guardar_cambios', 'Controller_incidencias::guardar_cambios');

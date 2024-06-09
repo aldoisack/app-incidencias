@@ -3,25 +3,21 @@
     <h2><b>Oficinas</b></h2>
     <div class="card">
 
-    
+
         <div class="card-header">
-            <a
-                class="btn btn-primary"
-                href="<?php echo base_url("oficinas/crear") ?>"
-                role="button"
-            >
+            <a class="btn btn-primary" href="<?php echo base_url("oficinas/crear") ?>" role="button">
                 Agregar oficina
             </a>
         </div>
 
-        
+
         <div class="card-body">
 
-        
+
             <div class="table-responsive">
                 <table class="table">
 
-                
+
                     <thead>
                         <tr>
                             <th scope="col">N°</th>
@@ -39,10 +35,10 @@
                             en la base de datos
                             y se imprime como una fila
                         -->
-                    
+
                         <?php
-                            $number = 1;
-                            foreach ($oficinas as $registro) {
+                        $number = 1;
+                        foreach ($oficinas as $registro) {
                         ?>
 
 
@@ -51,11 +47,7 @@
                                 <td> <?php echo $registro["nombre_oficina"]; ?> </td>
                                 <td> <?php echo ($registro["id_estado"] == 1) ? "Habilitado" : "Inhabilitado"; ?> </td>
                                 <td>
-                                    <a
-                                        class="btn btn-warning"
-                                        href="<?php echo base_url("oficinas/actualizar/" . $registro["id_oficina"]) ?>"
-                                        role="button"
-                                    >
+                                    <a class="btn btn-warning" href="<?php echo base_url("oficinas/actualizar/" . $registro["id_oficina"]) ?>" role="button">
                                         Editar
                                     </a>
                                 </td>
@@ -63,8 +55,8 @@
 
 
                         <?php
-                                $number += 1;
-                            }
+                            $number += 1;
+                        }
                         ?>
 
 

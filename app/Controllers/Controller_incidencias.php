@@ -13,7 +13,7 @@ use Models\Model_incidencia;
 
 class Controller_incidencias extends Controller
 {
-    public $id_usuario, $perfil, $logueado;
+    protected $id_usuario, $perfil, $logueado;
 
     public function __construct()
     {
@@ -95,21 +95,44 @@ class Controller_incidencias extends Controller
         echo view("templates/view_template_footer");
     }
 
-    // -------------------------
-    // Editar
-    // -------------------------
+    // ----------------------------------------------------------------
+    // ACTUALIZAR
+    // ----------------------------------------------------------------
+
+    public function actualizar($id_incidencia)
+    {
+        $datos["incidencia"] = (new Model_incidencias())->obtener_incidencia($id_incidencia);
+        $datos["oficinas"] = (new Model_oficinas())->obtener_oficinas();
+
+        echo view("templates/view_template_head");
+
+        switch ($this->perfil) {
+
+            case 'admin':
+                echo view("admin/view_admin_header");
+                echo view("admin/view_admin_incidencias_actualizar", $datos);
+                break;
+
+            case 'tecnico':
+                break;
+            case 'usuario':
+                break;
+        }
+
+        echo view("templates/view_template_footer");
+    }
 
     // -------------------------
     // Extras
     // -------------------------
 
-    public function obtener_oficina($id_oficina)
-    {
-        $oficinas = new Model_oficinas();
-        $oficina =  $oficinas->where("id_oficina", $id_oficina)->first();
-        $nombre_oficina = $oficina["nombre_oficina"];
-        return $nombre_oficina;
-    }
+    // public function obtener_oficina($id_oficina)
+    // {
+    //     $oficinas = new Model_oficinas();
+    //     $oficina =  $oficinas->where("id_oficina", $id_oficina)->first();
+    //     $nombre_oficina = $oficina["nombre_oficina"];
+    //     return $nombre_oficina;
+    // }
 
     public function validar_sesion()
     {

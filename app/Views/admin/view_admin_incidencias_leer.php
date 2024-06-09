@@ -46,7 +46,8 @@
 
                             <!-- Botones -->
                             <td>
-                                <button type="button" class="btn btn-primary mb-2">Tomar</button>
+                                <a class="btn btn-primary" href=" <?php echo base_url("/incidencias/actualizar/" . $registro["id_incidencia"]); ?>" role="button">Ver</a>
+
                             </td>
 
                         </tr>
