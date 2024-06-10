@@ -11,6 +11,10 @@ use App\Models\Model_usuarios;
 use CodeIgniter\Controller;
 use Models\Model_incidencia;
 
+use CodeIgniter\I18n\Time;
+
+use function PHPSTORM_META\map;
+
 class Controller_incidencias extends Controller
 {
     protected $id_usuario, $perfil, $logueado;
@@ -113,17 +117,49 @@ class Controller_incidencias extends Controller
         echo view("templates/view_template_footer");
     }
 
-    // -------------------------
-    // Extras
-    // -------------------------
+    public function guardar_cambios()
+    {
+        // Obtenemos los datos
+        $datos = [
+            "id_oficina" => $this->request->getVar("id_oficina"),
+            "telefono" => $this->request->getVar("telefono"),
+            "problema" => $this->request->getVar("problema"),
+            "detalle" => $this->request->getVar("detalle"),
+        ];
 
-    // public function obtener_oficina($id_oficina)
-    // {
-    //     $oficinas = new Model_oficinas();
-    //     $oficina =  $oficinas->where("id_oficina", $id_oficina)->first();
-    //     $nombre_oficina = $oficina["nombre_oficina"];
-    //     return $nombre_oficina;
-    // }
+        // ID de la incidencia a actualizar
+        $id_incidencia = $this->request->getVar("id_incidencia");
+
+        // Conxión y registro en la base de datos
+        $incidencias = new Model_incidencias();
+        $incidencias->update($id_incidencia, $datos);
+
+        // Redirección
+        return $this->response->redirect(base_url("incidencias/leer"));
+
+        #print_r($datos);
+    }
+
+    public function finalizar($id_incidencia)
+    {
+        ## Cambiar el estado de la incidencia
+        ## Guardar el usuario que la finalizó
+        ## Guardar la fecha de fin
+        $datos = [
+            "id_estado" => (new Model_estados())->obtener_id("Finalizado"),
+            "fecha_fin" => Time::now()->toDateTimeString()
+        ];
+
+        $incidencias = new Model_incidencias();
+        $incidencias->update($id_incidencia, $datos);
+
+        return $this->response->redirect(base_url("incidencias/leer"));
+        #print_r($datos);
+    }
+
+    // ----------------------------------------------------------------
+    // EXTRA
+    // ----------------------------------------------------------------
 
     public function validar_sesion()
     {
@@ -136,5 +172,15 @@ class Controller_incidencias extends Controller
         if (!$this->logueado) {
             return $this->response->redirect(base_url());
         }
+    }
+
+    public function historial()
+    {
+        $datos["incidencias"] = (new Model_incidencias())->obtener_incidencias();
+        return
+            view("templates/view_template_head") .
+            view("admin/view_admin_header") .
+            view("admin/view_admin_incidencias_historial", $datos) .
+            view("templates/view_template_footer");
     }
 }

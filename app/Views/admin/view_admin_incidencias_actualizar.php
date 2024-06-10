@@ -2,38 +2,22 @@
 
 <form action="<?php echo base_url("incidencias/guardar_cambios") ?>" method="post" enctype="multipart/form-data">
 
-    <!-- ----------------------------------- -->
-    <!-- ID oficina -->
-    <!-- ----------------------------------- -->
-
-    <!--
-        Se establece un INPUT oculto
-        para enviar el ID
-        y saber qué registro actualizar
-    -->
-    <div class="mb-3">
-        <input type="hidden" class="form-control" name="id_oficina" id="id_oficina" value="<?php echo $incidencia["id_incidencia"]; ?>" />
-    </div>
-
-
     <main class="container">
         <div class="card">
 
-
             <div class="card-header">
                 <div class="row">
-
 
                     <!-- ----------------------------------- -->
                     <!-- Ticket ID -->
                     <!-- ----------------------------------- -->
 
                     <div class="col-md-6">
-                        <h4>Ticket ID: <?php echo $incidencia["id_incidencia"]; ?></h4>
-                        <div> <?php echo $incidencia["nombre_estado"] ?> </div>
-                        <div> <?php echo $incidencia["nombres"] ?> </div>
+                        <h4> Ticket ID: <?= $incidencia["id_incidencia"]; ?> </h4>
+                        <div> Estado : <?= $incidencia["nombre_estado"];  ?> </div>
+                        <div> Técnico : <?= $incidencia["nombres"]; ?> </div>
+                        <input type="hidden" name="id_incidencia" id="id_incidencia" value="<?= $incidencia["id_incidencia"]; ?>" />
                     </div>
-
 
                     <!-- ----------------------------------- -->
                     <!-- Hora + Botón finalizar -->
@@ -42,9 +26,8 @@
                     <div class="col-md-6">
                         <h5>Inicio: <?php echo $incidencia["fecha_inicio"] ?></h5>
                         <h5>Fin : <?php echo $incidencia["fecha_fin"] ?></h5>
-                        <a class="btn btn-primary" href="#" role="button">Finalizar</a>
+                        <a class="btn btn-primary" href="<?= base_url("incidencias/finalizar/" . $incidencia["id_incidencia"]) ?>" role="button">Finalizar</a>
                     </div>
-
 
                 </div>
             </div>
@@ -92,7 +75,7 @@
                     <!-- Detalle -->
                     <div class="mb-3">
                         <label for="detalle" class="form-label">Detalle</label>
-                        <textarea class="form-control" name="detalle" id="detalle" rows="3"></textarea>
+                        <textarea class="form-control" name="detalle" id="detalle" rows="3"><?= $incidencia["detalle"]; ?></textarea>
                     </div>
 
                     <!-- Botones -->

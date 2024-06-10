@@ -16,13 +16,16 @@ class Model_estados extends Model
         return $this->findAll();
     }
 
+    /**
+     * Devulve el registro del "nombre_estado" buscado
+     */
     public function obtener_estado($nombre_estado)
     {
         return $this->where("nombre_estado", $nombre_estado)->first();
     }
 
     /**
-     * Devuelve el ID del valor buscado
+     * Devuelve el ID del "nombre_estado" buscado
      */
     public function obtener_id($valor)
     {

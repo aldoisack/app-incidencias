@@ -12,6 +12,25 @@
                     </b>
                 </li>
 
+                <!-- Historial -->
+                <li class="nav-item">
+                    <b>
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("historial")) ? "active" : ""; ?>" href="<?php echo base_url("historial") ?>">
+                            Historial
+                        </a>
+                    </b>
+                </li>
+
+                <!-- Bitácora -->
+                <li class="nav-item">
+                    <b>
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("bitácora")) ? "active" : ""; ?>" href="<?php echo base_url("historial") ?>">
+                            Bitácora
+                        </a>
+                    </b>
+                </li>
+
+
                 <!-- Oficinas -->
                 <li class="nav-item">
                     <b>

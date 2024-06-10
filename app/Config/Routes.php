@@ -20,9 +20,12 @@ $routes->get('incidencias/crear', 'Controller_incidencias::crear');
 $routes->get('incidencias/leer', 'Controller_incidencias::leer');
 $routes->get('incidencias/actualizar/(:num)', 'Controller_incidencias::actualizar/$1');
 
+$routes->get("incidencias/imprimirTicket/(:num)", "Controller_incidencias::imprimirTicket/$1");
 $routes->post('incidencias/guardar', 'Controller_incidencias::guardar');
 $routes->post('incidencias/guardar_cambios', 'Controller_incidencias::guardar_cambios');
-$routes->get("incidencias/imprimirTicket/(:num)", "Controller_incidencias::imprimirTicket/$1");
+$routes->get("incidencias/finalizar/(:num)", "Controller_incidencias::finalizar/$1");
+
+$routes->get("historial", "Controller_incidencias::historial");
 
 // -----------------------------------
 // Oficinas

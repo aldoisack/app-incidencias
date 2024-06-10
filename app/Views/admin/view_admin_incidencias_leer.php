@@ -45,9 +45,7 @@
                             <td> <?php echo $registro["nombres"]; ?> </td>
 
                             <!-- Botones -->
-                            <td>
-                                <a class="btn btn-primary" href=" <?php echo base_url("/incidencias/actualizar/" . $registro["id_incidencia"]); ?>" role="button">Ver</a>
-                            </td>
+                            <td> <a class="btn btn-primary" href=" <?php echo base_url("/incidencias/actualizar/" . $registro["id_incidencia"]); ?>" role="button">Ver</a> </td>
 
                         </tr>
                     <?php } ?>
@@ -62,70 +60,82 @@
     <!-- Incidencias nuevas -->
     <!-- ----------------------------------------------------------------------- -->
 
-    <!-- Vista de escritorio -->
-    <div class="table-responsive col-lg-12 d-none d-lg-block">
+    <?php if ($incidencias_nuevas != null) { ?>
 
-        <h2>Incidencias nuevas</h2>
+        <!-- Vista de escritorio -->
+        <div class="table-responsive col-lg-12 d-none d-lg-block">
 
-        <table class="table">
+            <h2>Incidencias nuevas</h2>
 
-            <thead>
-                <tr>
-                    <th scope="col">Ticket ID</th>
-                    <th scope="col">Oficina</th>
-                    <th scope="col">Problema</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">Técnico</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
+            <table class="table">
 
-            <tbody>
-                <?php foreach ($incidencias_nuevas as $registro) { ?>
-                    <tr class="">
-
-                        <!-- Ticket ID -->
-                        <td scope="row"> <?php echo $registro["id_incidencia"]; ?></td>
-
-                        <!-- Oficinas -->
-                        <td> <?php echo $registro["nombre_oficina"]; ?> </td>
-
-                        <!-- Problema -->
-                        <td> <?php echo $registro["problema"]; ?> </td>
-
-                        <!-- Estado -->
-                        <td> <?php echo $registro["nombre_estado"]; ?> </td>
-
-                        <!-- Tecnicos -->
-                        <td> <?php echo $registro["nombres"]; ?> </td>
-
-                        <!-- Botones -->
-                        <td>
-                            <button type="button" class="btn btn-primary mb-2">Tomar</button>
-                        </td>
-
+                <thead>
+                    <tr>
+                        <th scope="col">Ticket ID</th>
+                        <th scope="col">Oficina</th>
+                        <th scope="col">Problema</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Técnico</th>
+                        <th scope="col">Acciones</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </div>
+                </thead>
 
-    <!-- Vista de celulares -->
-    <div class="card col-12 d-block d-lg-none">
-        <div class="card-body">
-            <h4 class="card-title">Tesorería</h4>
-            <p class="card-text">No puedo imprimir</p>
-            <div class="row">
+                <tbody>
+                    <?php foreach ($incidencias_nuevas as $registro) { ?>
+                        <tr class="">
+
+                            <!-- Ticket ID -->
+                            <td scope="row"> <?php echo $registro["id_incidencia"]; ?></td>
+
+                            <!-- Oficinas -->
+                            <td> <?php echo $registro["nombre_oficina"]; ?> </td>
+
+                            <!-- Problema -->
+                            <td> <?php echo $registro["problema"]; ?> </td>
+
+                            <!-- Estado -->
+                            <td> <?php echo $registro["nombre_estado"]; ?> </td>
+
+                            <!-- Tecnicos -->
+                            <td> <?php echo $registro["nombres"]; ?> </td>
+
+                            <!-- Botones -->
+                            <td> <a class="btn btn-primary" href=" <?php echo base_url("/incidencias/actualizar/" . $registro["id_incidencia"]); ?>" role="button">Ver</a> </td>
+
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Vista de celulares -->
+        <div class="card col-12 d-block d-lg-none">
+            <div class="card-body">
+
+                <h4 class="card-title">Tesorería</h4>
+
                 <div class="col">
-                    TO DO
-                    <br>
-                    0001
+                    <p class="card-text">No puedo imprimir</p>
                 </div>
+
                 <div class="col text-end">
                     <button type="button" class="btn btn-primary">Tomar</button>
                 </div>
+
             </div>
         </div>
-    </div>
+
+    <?php  } ?>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- Sin incidencias -->
+    <!-- ----------------------------------------------------------------------- -->
+
+    <?php if ($incidencias_nuevas == null && $incidencias_pendientes == null) { ?>
+        <div>
+            <h1>Por el momento no hay tareas</h1>
+            <h1>Bien hecho ;)</h1>
+        </div>
+    <?php } ?>
 
 </main>
