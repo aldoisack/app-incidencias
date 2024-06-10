@@ -20,4 +20,13 @@ class Model_estados extends Model
     {
         return $this->where("nombre_estado", $nombre_estado)->first();
     }
+
+    /**
+     * Devuelve el ID del valor buscado
+     */
+    public function obtener_id($valor)
+    {
+        $registro = $this->where("nombre_estado", $valor)->first();
+        return $registro["id_estado"];
+    }
 }

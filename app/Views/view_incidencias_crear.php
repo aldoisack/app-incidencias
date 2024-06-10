@@ -10,12 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS v5.2.1 -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
-        crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
 </head>
 
@@ -26,24 +21,14 @@
         <nav class="navbar navbar-expand navbar-dark bg-dark justify-content-center">
             <div class="nav navbar-nav">
 
-
-                <a 
-                    class="nav-item nav-link active"
-                    href="#"
-                    aria-current="page"
-                >
+                <a class="nav-item nav-link active" href="#" aria-current="page">
                     Registrar ticket
                 </a>
 
-                
-                <a
-                    class="nav-item nav-link"
-                    href="#"
-                >
+                <a class="nav-item nav-link" href="#">
                     Seguimiento de ticket
                 </a>
 
-                
             </div>
         </nav>
     </header>
@@ -70,6 +55,7 @@
                                 <select class="form-select form-select-mb" name="id_oficina" id="id_oficina">
 
                                     <option selected>--- Select one ---</option>
+
                                     <?php foreach ($oficinas as $registro) { ?>
                                         <option value="<?php echo $registro["id_oficina"] ?>">
                                             <?php echo $registro["nombre_oficina"] ?>
@@ -84,12 +70,7 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label for="telefono" class="form-label">Teléfono</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    name="telefono"
-                                    id="telefono"
-                                />
+                                <input type="text" class="form-control" name="telefono" id="telefono" />
                             </div>
                         </div>
 

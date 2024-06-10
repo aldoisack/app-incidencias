@@ -18,7 +18,7 @@ class Model_usuarios extends Model
         "contrasenia",
         "id_perfil",
         "id_oficina",
-        "id_estado"
+        "id_estado",
     ];
 
     public function verificar($correo, $contrasenia)
@@ -33,8 +33,10 @@ class Model_usuarios extends Model
 
     public function obtener_tecnicos()
     {
-        $perfiles = new Model_perfiles();
-        $perfil_tecnico = $perfiles->where("nombre_perfil", "Técnico")->first();
-        return $this->where("id_perfil", $perfil_tecnico["id_perfil"])->findAll();
+        return $this
+            ->select("usuarios.*, perfiles.nombre_perfil")
+            ->join("perfiles", "usuarios.id_perfil = perfiles.id_perfil")
+            ->where("perfiles.nombre_perfil", "Técnico")
+            ->findAll();
     }
 }

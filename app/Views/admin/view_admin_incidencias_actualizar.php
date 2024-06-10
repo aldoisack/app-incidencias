@@ -30,7 +30,8 @@
 
                     <div class="col-md-6">
                         <h4>Ticket ID: <?php echo $incidencia["id_incidencia"]; ?></h4>
-                        <h6><?php echo $incidencia["id_estado"] ?></h6>
+                        <div> <?php echo $incidencia["nombre_estado"] ?> </div>
+                        <div> <?php echo $incidencia["nombres"] ?> </div>
                     </div>
 
 
@@ -63,7 +64,7 @@
                                 <select class="form-select form-select-mb" name="id_oficina" id="id_oficina">
 
                                     <?php foreach ($oficinas as $registro) { ?>
-                                        <option value="<?php echo $registro["id_oficina"] ?>" <?php echo ($registro["id_oficina"] = $incidencia["id_oficina"]) ? "selected" : "" ?>>
+                                        <option value="<?php echo $registro["id_oficina"] ?>" <?php echo ($registro["id_oficina"] == $incidencia["id_oficina"]) ? "selected" : "" ?>>
                                             <?php echo $registro["nombre_oficina"] ?>
                                         </option>
                                     <?php } ?>

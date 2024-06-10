@@ -15,7 +15,8 @@ class Model_incidencias extends Model
         "telefono",
         "problema",
         "id_estado",
-        "id_usuario"
+        "id_usuario",
+        "id_tecnico"
     ];
 
     /**
@@ -23,19 +24,24 @@ class Model_incidencias extends Model
      */
     public function obtener_incidencia($id_incidencia)
     {
-        return $this->where("id_incidencia", $id_incidencia)->first();
+        return $this
+            ->select("incidencias.*, estados.nombre_estado, usuarios.nombres")
+            ->join("estados", "incidencias.id_estado = estados.id_estado")
+            ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
+            ->where("incidencias.id_incidencia", $id_incidencia)
+            ->first();
     }
 
     public function obtener_incidencias_pendientes()
     {
         $dia_actual = date("Y-m-d");
         return $this
-            ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.id_usuario, usuarios.nombres")
+            ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
             ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
             ->join("estados", "incidencias.id_estado = estados.id_estado")
-            ->join("usuarios", "incidencias.id_usuario = usuarios.id_usuario")
+            ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
             ->where("estados.nombre_estado !=", "Finalizado")
-            ->where("incidencias.fecha_inicio !=", $dia_actual)
+            ->where("DATE(incidencias.fecha_inicio) !=", $dia_actual)
             ->findAll();
     }
 
@@ -43,9 +49,11 @@ class Model_incidencias extends Model
     {
         $dia_actual = date("Y-m-d");
         return $this
-            ->select("incidencias.*, oficinas.nombre_oficina")
+            ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
             ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
-            ->where("incidencias.fecha_inicio", $dia_actual)
+            ->join("estados", "incidencias.id_estado = estados.id_estado")
+            ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
+            ->where("DATE(incidencias.fecha_inicio)", $dia_actual)
             ->findAll();
     }
 }

@@ -7,17 +7,26 @@ use CodeIgniter\Model;
 class Model_asignaciones extends Model
 {
     protected $table      = 'asignaciones';
-    // Uncomment below if you want add primary key
     protected $primaryKey = 'id_asignacion';
     protected $allowedFields = ["id_usuario"];
 
+    /**
+     * Devuelve un técnico
+     */
     public function asignar_tecnico()
     {
+
+        $tecnicos = (new Model_usuarios())->obtener_tecnicos();
+
         $ultima_asignacion = $this->orderBy("id_asignacion", "DESC")->first();
-        $datos = [
-            "id_usuario" => $ultima_asignacion["id_usuario"] + 1
-        ];
-        $this->insert($datos);
-        return $ultima_asignacion["id_usuario"];
+
+        while (true) {
+            $numero_aleatorio = rand(1, 100);
+            foreach ($tecnicos as $registro) {
+                if ($numero_aleatorio == $registro["id_usuario"] && $numero_aleatorio != $ultima_asignacion["id_asignacion"]) {
+                    return $registro["id_usuario"];
+                }
+            }
+        }
     }
 }

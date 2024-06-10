@@ -33,25 +33,15 @@ class Controller_incidencias extends Controller
 
     public function guardar()
     {
-        $asignaciones = new Model_asignaciones();
-
-        # Obtenemos el registro con valor "Nuevo"
-        $estados = new Model_estados();
-        $registro_con_valor_Nuevo = $estados->where("nombre_estado", "Nuevo")->first();
-
-        # Extraemos el ID del registro
-        $id_estado = $registro_con_valor_Nuevo["id_estado"];
-
-        # Almacenamos los datos
         $datos = [
             "id_oficina" => $this->request->getVar("id_oficina"),
             "telefono"   => $this->request->getVar("telefono"),
             "problema"   => $this->request->getVar("problema"),
-            "id_estado"  => $id_estado,
-            "id_usuario" => $asignaciones->asignar_tecnico(),
+            "id_estado"  => (new Model_estados())->obtener_id("Nuevo"),
+            "id_tecnico" => (new Model_asignaciones())->asignar_tecnico(),
         ];
 
-        # Enviamos la información
+        # Guardamos la información
         $incidencia = new Model_incidencias();
         $incidencia->insert($datos);
 
@@ -74,6 +64,7 @@ class Controller_incidencias extends Controller
     public function leer()
     {
         $datos["incidencias_pendientes"] = (new Model_incidencias())->obtener_incidencias_pendientes();
+        // $datos["incidencias_pendientes"] = null;
         $datos["incidencias_nuevas"]     = (new Model_incidencias())->obtener_incidencias_nuevas();
 
         echo view("templates/view_template_head");
