@@ -617,3 +617,797 @@ INFO - 2024-06-10 18:23:06 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-06-10 18:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-10 18:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-06-10 18:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:51:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:51:27 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:51:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:51:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:51:28 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:52:41 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:52:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:41 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:52:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:52:43 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:52:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:43 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:52:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:52:44 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:52:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:44 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:52:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:52:44 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:52:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:44 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:52:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:52:44 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:52:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:44 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-10 23:52:45 --> mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause' in C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php:308
+Stack trace:
+#0 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `inciden...', 0)
+#1 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inciden...')
+#2 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inciden...')
+#3 C:\xampp-8.2.12\htdocs\app_incidencias\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `inciden...', Array, false)
+#4 C:\xampp-8.2.12\htdocs\app_incidencias\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp-8.2.12\htdocs\app_incidencias\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp-8.2.12\htdocs\app_incidencias\app\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp-8.2.12\htdocs\app_incidencias\app\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+#8 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+#9 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+#10 C:\xampp-8.2.12\htdocs\app_incidencias\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp-8.2.12\htdocs\app_incidencias\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp-8.2.12\htdocs\app_incidencias\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-06-10 23:52:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+[Method: GET, Route: incidencias/leer]
+in SYSTEMPATH\Database\BaseConnection.php on line 676.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 2 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 313.
+ 1 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 4 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-10 23:52:45 --> [Caused by] mysqli_sql_exception: Unknown column 'incidencias.id_tecnico' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 308.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(308): mysqli->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(722): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != \'Finalizado\'
+AND DATE(incidencias.fecha_inicio) != \'2024-06-10\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `incidencias`.*, `oficinas`.`nombre_oficina`, `estados`.`nombre_estado`, `usuarios`.`nombres`
+FROM `incidencias`
+JOIN `oficinas` ON `incidencias`.`id_oficina` = `oficinas`.`id_oficina`
+JOIN `estados` ON `incidencias`.`id_estado` = `estados`.`id_estado`
+JOIN `usuarios` ON `incidencias`.`id_tecnico` = `usuarios`.`id_usuario`
+WHERE `estados`.`nombre_estado` != :estados.nombre_estado:
+AND DATE(incidencias.fecha_inicio) != :DATE(incidencias.fecha_inicio):', [...], false)
+ 5 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Model_incidencias.php(67): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Controller_incidencias.php(70): App\Models\Model_incidencias->obtener_incidencias_pendientes()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Controller_incidencias->leer()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-10 23:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-10 23:57:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
