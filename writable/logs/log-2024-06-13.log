@@ -1,0 +1,113 @@
+ERROR - 2024-06-13 17:23:36 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'db_incidencias' in /opt/lampp/htdocs/app_incidencias/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /opt/lampp/htdocs/app_incidencias/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'db_incidencias', 3306, '', 0)
+#1 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 /opt/lampp/htdocs/app_incidencias/system/Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 /opt/lampp/htdocs/app_incidencias/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /opt/lampp/htdocs/app_incidencias/app/Models/Model_usuarios.php(31): CodeIgniter\BaseModel->first()
+#7 /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_login.php(27): App\Models\Model_usuarios->verificar('admin@admin.com', 'admin')
+#8 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+#9 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+#10 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /opt/lampp/htdocs/app_incidencias/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 /opt/lampp/htdocs/app_incidencias/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /opt/lampp/htdocs/app_incidencias/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'db_incidencias' in /opt/lampp/htdocs/app_incidencias/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /opt/lampp/htdocs/app_incidencias/system/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 /opt/lampp/htdocs/app_incidencias/system/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#3 /opt/lampp/htdocs/app_incidencias/system/Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 /opt/lampp/htdocs/app_incidencias/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 /opt/lampp/htdocs/app_incidencias/app/Models/Model_usuarios.php(31): CodeIgniter\BaseModel->first()
+#6 /opt/lampp/htdocs/app_incidencias/app/Controllers/Controller_login.php(27): App\Models\Model_usuarios->verificar('admin@admin.com', 'admin')
+#7 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+#8 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+#9 /opt/lampp/htdocs/app_incidencias/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /opt/lampp/htdocs/app_incidencias/system/Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 /opt/lampp/htdocs/app_incidencias/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /opt/lampp/htdocs/app_incidencias/public/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2024-06-13 17:23:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'db_incidencias'
+[Method: POST, Route: autenticar]
+in SYSTEMPATH/Database/BaseConnection.php on line 457.
+ 1 SYSTEMPATH/Database/BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT `usuarios`.*, `perfiles`.`nombre_perfil`
+FROM `usuarios`
+JOIN `perfiles` ON `usuarios`.`id_perfil` = `perfiles`.`id_perfil`
+WHERE `usuarios`.`correo` = :usuarios.correo:
+AND `usuarios`.`contrasenia` = :usuarios.contrasenia:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/Model_usuarios.php(31): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/Controller_login.php(27): App\Models\Model_usuarios->verificar('admin@admin.com', 'admin')
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_login->autenticar()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_login))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-13 17:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 17:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 17:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:28:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:46:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:47:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:47:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:47:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 18:47:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-13 18:47:13 --> TypeError: CodeIgniter\BaseModel::timeToString(): Argument #1 ($properties) must be of type array, string given, called in /opt/lampp/htdocs/app_incidencias/system/BaseModel.php on line 1875
+[Method: POST, Route: incidencias/guardar_cambios]
+in SYSTEMPATH/BaseModel.php on line 1762.
+ 1 SYSTEMPATH/BaseModel.php(1875): CodeIgniter\BaseModel->timeToString('10')
+ 2 SYSTEMPATH/BaseModel.php(806): CodeIgniter\BaseModel->transformDataToArray('10', 'insert')
+ 3 SYSTEMPATH/Model.php(791): CodeIgniter\BaseModel->insert('10', true)
+ 4 APPPATH/Models/Model_bitacora.php(21): CodeIgniter\Model->insert('10', true, '22')
+ 5 APPPATH/Controllers/Controller_incidencias.php(139): App\Models\Model_bitacora->guardar_registro('10', 'Modifico el registro', '22')
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Controller_incidencias->guardar_cambios()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Controller_incidencias))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-06-13 22:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:47:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:47:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:47:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:47:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-13 22:48:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

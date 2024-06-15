@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Model_asignaciones;
+use App\Models\Model_bitacora;
 use App\Models\Model_oficinas;
 use App\Models\Model_incidencias;
 use App\Models\Model_estados;
@@ -133,6 +134,14 @@ class Controller_incidencias extends Controller
         // Conxión y registro en la base de datos
         $incidencias = new Model_incidencias();
         $incidencias->update($id_incidencia, $datos);
+
+        // Guardar historial de cambios en la bitácora
+        $bitacora = [
+            "id_usuario" => $this->id_usuario,
+            "accion" => "Modificó el registro",
+            "registro_afectado" => $id_incidencia,
+        ];
+        (new Model_bitacora())->insert($bitacora);
 
         // Redirección
         return $this->response->redirect(base_url("incidencias/leer"));

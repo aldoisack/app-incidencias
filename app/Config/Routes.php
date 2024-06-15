@@ -13,16 +13,18 @@ $routes->get("/register", "Controller_login::register");
 $routes->post("/register/guardar", "Controller_login::guardar");
 $routes->get("/cerrar_sesion", "Controller_login::cerrar_sesion");
 
-// -------------------------------------------
-// Incidencias
-// -------------------------------------------
+// -----------------------------------------------------------------------
+// INCIDENCIAS
+// -----------------------------------------------------------------------
+
 $routes->get('incidencias/crear', 'Controller_incidencias::crear');
 $routes->get('incidencias/leer', 'Controller_incidencias::leer');
 $routes->get('incidencias/actualizar/(:num)', 'Controller_incidencias::actualizar/$1');
 
-$routes->get("incidencias/imprimirTicket/(:num)", "Controller_incidencias::imprimirTicket/$1");
 $routes->post('incidencias/guardar', 'Controller_incidencias::guardar');
 $routes->post('incidencias/guardar_cambios', 'Controller_incidencias::guardar_cambios');
+
+$routes->get("incidencias/imprimirTicket/(:num)", "Controller_incidencias::imprimirTicket/$1");
 $routes->get("incidencias/finalizar/(:num)", "Controller_incidencias::finalizar/$1");
 
 $routes->get("historial", "Controller_incidencias::historial");
@@ -49,11 +51,12 @@ $routes->get('tecnicos/actualizar/(:num)', 'Controller_tecnicos::actualizar/$1')
 $routes->post('tecnicos/guardar', 'Controller_tecnicos::guardar');
 $routes->post('tecnicos/guardar_cambios', 'Controller_tecnicos::guardar_cambios');
 
-// ---------------------------------------------------------
-// Extras 
-// ---------------------------------------------------------
+// -----------------------------------------------------------------------
+// EXTRAS 
+// -----------------------------------------------------------------------
 
 $routes->get("incidencias/obtener_oficina/(:num)", "Controller_incidencias::obtener_oficina/$1");
+$routes->get("bitacora", "Controller_bitacora::index");
 
 // Perfiles
 // $routes->get("perfiles", "Controller_perfiles::index");

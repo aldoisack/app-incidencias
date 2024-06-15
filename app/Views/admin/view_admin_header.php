@@ -24,7 +24,7 @@
                 <!-- Bitácora -->
                 <li class="nav-item">
                     <b>
-                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("bitácora")) ? "active" : ""; ?>" href="<?php echo base_url("historial") ?>">
+                        <a class="nav-link <?php echo str_starts_with(current_url(), base_url("bitacora")) ? "active" : ""; ?>" href="<?php echo base_url("bitacora") ?>">
                             Bitácora
                         </a>
                     </b>
