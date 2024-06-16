@@ -29,6 +29,8 @@ $routes->get("incidencias/finalizar/(:num)", "Controller_incidencias::finalizar/
 
 $routes->get("historial", "Controller_incidencias::historial");
 
+$routes->get("/obtener_incidencias", "Controller_incidencias::obtener_incidencias");
+
 // -----------------------------------
 // Oficinas
 // -----------------------------------

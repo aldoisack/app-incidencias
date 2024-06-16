@@ -192,4 +192,11 @@ class Controller_incidencias extends Controller
             view("admin/view_admin_incidencias_historial", $datos) .
             view("templates/view_template_footer");
     }
+
+    public function obtener_incidencias()
+    {
+        $datos["incidencias_pendientes"] = (new Model_incidencias())->obtener_incidencias_pendientes();
+        $datos["incidencias_nuevas"]     = (new Model_incidencias())->obtener_incidencias_nuevas();
+        return $this->response->setJSON($datos);
+    }
 }
