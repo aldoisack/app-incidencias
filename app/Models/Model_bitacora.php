@@ -13,7 +13,8 @@ class Model_bitacora extends Model
     protected $allowedFields = [
         "id_usuario",
         "accion",
-        "registro_afectado"
+        "registro_afectado",
+        "tabla"
     ];
 
     public function obtener_registros()

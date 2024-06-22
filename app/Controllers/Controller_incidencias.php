@@ -137,11 +137,13 @@ class Controller_incidencias extends Controller
 
         // Guardar historial de cambios en la bitácora
         $bitacora = [
-            "id_usuario" => $this->id_usuario,
-            "accion" => "Modificó el registro",
+            "id_usuario"        => $this->id_usuario,
+            "accion"            => "Modificó el registro",
             "registro_afectado" => $id_incidencia,
+            "tabla"             => "incidencias"
         ];
-        (new Model_bitacora())->insert($bitacora);
+        $registro_bitacora = new Model_bitacora;
+        (new Model_bitacora)->insert($bitacora);
 
         // Redirección
         return $this->response->redirect(base_url("incidencias/leer"));

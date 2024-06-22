@@ -60,6 +60,8 @@ $routes->post('tecnicos/guardar_cambios', 'Controller_tecnicos::guardar_cambios'
 $routes->get("incidencias/obtener_oficina/(:num)", "Controller_incidencias::obtener_oficina/$1");
 $routes->get("bitacora", "Controller_bitacora::index");
 
+$routes->get("estadisticas", "Controller_estadisticas::index");
+
 // Perfiles
 // $routes->get("perfiles", "Controller_perfiles::index");
 // $routes->get("perfiles/crear", "Controller_perfiles::crear");

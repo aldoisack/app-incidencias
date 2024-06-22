@@ -57,6 +57,19 @@
                     </b>
                 </li>
 
+                <!-- Estadísticas -->
+                <li class="nav-item">
+                    <b>
+                        <a class="nav-link
+                            <?php
+                            echo str_starts_with(current_url(), base_url("estadisticas")) ?
+                                "active" : "";
+                            ?>" href="<?php echo base_url("estadisticas") ?>">
+                            Estadísticas
+                        </a>
+                    </b>
+                </li>
+
                 <!-- Cerrar sesión -->
                 <li class="nav-item">
                     <b>
