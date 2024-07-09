@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use SebastianBergmann\CodeCoverage\Driver\Selector;
 
 class Model_incidencias extends Model
 {
@@ -14,6 +15,7 @@ class Model_incidencias extends Model
         "id_oficina",
         "telefono",
         "problema",
+        "id_categoria",
         "detalle",
         "id_estado",
         "id_usuario",
@@ -22,61 +24,75 @@ class Model_incidencias extends Model
     ];
 
     /**
-     * Método para listar todas las incidencias
-     * Devuelve todos los registros
+     * Método para listar todas las incidencias que el técnico ha finalizado.
+     * El el caso de admin se muestran todas las incidencias finalizadas 
+     * @return array|null Registros encontrados o null si no encuentra
      */
-    public function obtener_incidencias()
+    public function historial_incidencias()
     {
-        return $this
-            ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
-            ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
-            ->join("estados", "incidencias.id_estado = estados.id_estado")
-            ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
-            ->orderBy("id_incidencia", "DESC")
-            ->findAll();
+        // Datos de sesión
+        $sesion = session();
+        $id_usuario = $sesion->get("id_usuario");
+        $perfil = $sesion->get("nombre_perfil");
+
+        if ($perfil == "admin") {
+            return $this
+                ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
+                ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
+                ->join("estados", "incidencias.id_estado = estados.id_estado")
+                ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
+                ->where("estados.nombre_estado", "Finalizado")
+                ->orderBy("id_incidencia", "DESC")
+                ->findAll();
+        } else {
+            return $this
+                ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
+                ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
+                ->join("estados", "incidencias.id_estado = estados.id_estado")
+                ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
+                ->where("estados.nombre_estado", "Finalizado")
+                ->where("incidencias.id_tecnico", $id_usuario)
+                ->orderBy("id_incidencia", "DESC")
+                ->findAll();
+        }
     }
 
     /**
-     * Busca una incidencia por su ID
-     * Devuelve el registro buscado
+     * Método para buscar una incidencia por su ID
+     * @param int $id_incidencia ID de la incidencia
+     * @return array|null Registro encontrado o null si no encuentra
      */
-    public function obtener_incidencia($id_incidencia)
+    public function buscar_incidencia($id_incidencia)
     {
         return $this
-            ->select("incidencias.*, estados.nombre_estado, usuarios.nombres")
+            ->select("incidencias.*, estados.nombre_estado, usuarios.nombres, oficinas.nombre_oficina, categorias.nombre_categoria")
             ->join("estados", "incidencias.id_estado = estados.id_estado")
             ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
+            ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
+            ->join("categorias", "incidencias.id_categoria = categorias.id_categoria", "left")
             ->where("incidencias.id_incidencia", $id_incidencia)
             ->first();
     }
 
-    /**
-     * Método para obtener todas la incidencias pendientes.
-     * Devuelve todos los registros con estado "pendientes"
-     */
-    public function obtener_incidencias_pendientes()
+    public function obtener_incidencias()
     {
-        $dia_actual = date("Y-m-d");
         return $this
-            ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
+            ->select("incidencias.id_incidencia, incidencias.problema, incidencias.id_tecnico, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
             ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
             ->join("estados", "incidencias.id_estado = estados.id_estado")
             ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
             ->where("estados.nombre_estado !=", "Finalizado")
-            ->where("DATE(incidencias.fecha_inicio) !=", $dia_actual)
+            ->orderBy("CASE estados.nombre_estado WHEN 'En proceso' THEN 1 WHEN 'Nuevo' THEN 2 ELSE 3 END", "ASC")
+            ->orderBy("id_incidencia", "ASC")
             ->findAll();
     }
 
-    public function obtener_incidencias_nuevas()
+    public function obtener_ultima_incidencia()
     {
-        $dia_actual = date("Y-m-d");
         return $this
-            ->select("incidencias.*, oficinas.nombre_oficina, estados.nombre_estado, usuarios.nombres")
+            ->select("incidencias.*, oficinas.nombre_oficina")
             ->join("oficinas", "incidencias.id_oficina = oficinas.id_oficina")
-            ->join("estados", "incidencias.id_estado = estados.id_estado")
-            ->join("usuarios", "incidencias.id_tecnico = usuarios.id_usuario")
-            ->where("estados.nombre_estado !=", "Finalizado")
-            ->where("DATE(incidencias.fecha_inicio)", $dia_actual)
-            ->findAll();
+            ->orderBy("id_incidencia", "DESC")
+            ->first();
     }
 }

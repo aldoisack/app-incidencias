@@ -9,39 +9,62 @@ use CodeIgniter\Controller;
 
 class Controller_login extends Controller
 {
+    /**
+     * Método para mostrar el formulario de login
+     * @return view Formulario de login
+     */
     public function login()
     {
-        return
-            view("templates/view_template_head") .
-            view("templates/view_template_login") .
-            view("templates/view_template_footer");
+        $sesion = session();
+        $logueado = $sesion->get("logueado");
+
+        if ($logueado) {
+            return $this->response->redirect("principal");
+        } else {
+            return
+                view("templates/view_template_head") .
+                view("templates/view_template_login") .
+                view("templates/view_template_footer");
+        }
     }
 
+    /**
+     * Método para validar las credenciales del usuario
+     * @return view Pantalla principal del sistema
+     */
     public function autenticar()
     {
         // Obteniendo datos del formulario
-        $correo      = $this->request->getVar("correo");
+        $usuario     = $this->request->getVar("usuario");
         $contrasenia = $this->request->getVar("contrasenia");
 
-        // Buscamos el correo en la base de datos
-        $usuario = (new Model_usuarios())->verificar($correo, $contrasenia);
+        // Acceso a la tabla
+        $tbl_usuarios = new Model_usuarios();
 
+        // Validando credenciales
+        $usuario = $tbl_usuarios->verificar($usuario, $contrasenia);
+
+        // Iniciando sesión
         if ($usuario) {
 
             $sesion = session();
 
             $datos = [
-                "id_usuario" => $usuario["id_usuario"],
-                "perfil"     => $usuario["nombre_perfil"],
-                "logueado"   => true,
+                "id_usuario"    => $usuario["id_usuario"],
+                "nombre_perfil" => $usuario["nombre_perfil"],
+                "logueado"      => true,
             ];
+
+            $logueado["logueado"] = 1;
 
             $sesion->set($datos);
 
-            // print_r($sesion->get("perfil"));
-            return $this->response->redirect("incidencias/leer");
+            $tbl_usuarios->update($usuario["id_usuario"], $logueado);
+
+            return $this->response->redirect("principal");
         } else {
-            echo "Credenciales incorrectas";
+            session()->setFlashdata('error', 'Usuario o contraseña incorrectas');
+            return $this->response->redirect(base_url());
         }
     }
 
@@ -84,10 +107,18 @@ class Controller_login extends Controller
         return $this->response->redirect(base_url());
     }
 
-    public function cerrar_sesion()
+    public function logout()
     {
         $sesion = session();
+
+        $id_usuario = $sesion->get("id_usuario");
+
+        $logueado["logueado"] = 0;
+
+        (new Model_usuarios())->update($id_usuario, $logueado);
+
         $sesion->destroy();
+
         return $this->response->redirect(base_url());
     }
 }

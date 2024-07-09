@@ -10,14 +10,9 @@ class Model_perfiles extends Model
     protected $primaryKey = 'id_perfil';
     protected $allowedFields = ["nombre_perfil"];
 
-    public function obtener_perfil($id_perfil)
+    public function obtener_id_perfil($nombre_perfil)
     {
-        $perfil = $this->where("id_perfil", $id_perfil)->first();
-        return $perfil["nombre_perfil"];
-    }
-
-    public function obtener_perfiles()
-    {
-        return $this->findAll();
+        $registro = $this->where("nombre_perfil", $nombre_perfil)->first();
+        return $registro["id_perfil"];
     }
 }

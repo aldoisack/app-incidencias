@@ -7,17 +7,23 @@ use CodeIgniter\Model;
 class Model_estados extends Model
 {
     protected $table      = 'estados';
-    // Uncomment below if you want add primary key
+
     protected $primaryKey = 'id_estado';
     protected $allowedFields = ["nombre_estado"];
 
+    /**
+     * Método para obtener
+     * todos los estados registrados en la tabla
+     */
     public function obtener_estados()
     {
         return $this->findAll();
     }
 
     /**
-     * Devulve el registro del "nombre_estado" buscado
+     * Método para buscar un registro en función del nombre del estado.
+     * @param string $nombre_estado Nombre del estado a buscar.
+     * @return object|null Registro encontrado o null si no se encuentra ninguno. 
      */
     public function obtener_estado($nombre_estado)
     {
@@ -25,11 +31,13 @@ class Model_estados extends Model
     }
 
     /**
-     * Devuelve el ID del "nombre_estado" buscado
+     * Método para obtener el ID de un valor buscado
+     * @param string $nombre_estado Nombre del estado a buscar
+     * @return int|null ID encontrado o null si no se encuentra ninguno
      */
-    public function obtener_id($valor)
+    public function obtener_id($nombre_estado)
     {
-        $registro = $this->where("nombre_estado", $valor)->first();
+        $registro = $this->where("nombre_estado", $nombre_estado)->first();
         return $registro["id_estado"];
     }
 }

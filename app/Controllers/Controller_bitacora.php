@@ -9,11 +9,21 @@ class Controller_bitacora extends Controller
 {
     public function index()
     {
-        $datos["registros_bitacora"] = (new Model_bitacora())->obtener_registros();
-        return
-            view("templates/view_template_head") .
-            view("admin/view_admin_header") .
-            view("admin/view_admin_bitacora", $datos) .
-            view("templates/view_template_footer");
+        $tbl_bitacora = new Model_bitacora();
+        $bitacora["registros"] = $tbl_bitacora->obtener_registros();
+        return view("bitacora/view_bitacora", $bitacora);
+    }
+
+    public function test()
+    {
+        // Guardar historial de cambios en la bitácora
+        $bitacora = [
+            // "id_usuario"        => $this->id_usuario,
+            "accion"            => "Modificó el registro",
+            // "registro_afectado" => $id_incidencia,
+            "tabla"             => "incidencias"
+        ];
+        $registro_bitacora = new Model_bitacora;
+        (new Model_bitacora)->insert($bitacora);
     }
 }

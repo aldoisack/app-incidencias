@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class Model_estadisticas extends Model
 {
     protected $table      = '';
-    // Uncomment below if you want add primary key
+
     // protected $primaryKey = 'id';
 
     public function numero_incidencias_oficina()
@@ -16,6 +16,16 @@ class Model_estadisticas extends Model
             ->select("oficinas.nombre_oficina, COUNT(incidencias.id_incidencia) as num_incidencias")
             ->join("incidencias", "oficinas.id_oficina = incidencias.id_oficina", "left")
             ->groupBy("oficinas.nombre_oficina")
+            ->get()
+            ->getResult();
+    }
+
+    public function numero_incidencias_categoria()
+    {
+        return $this->db->table('categorias')
+            ->select("categorias.nombre_categoria, COUNT(incidencias.id_incidencia) as num_incidencias")
+            ->join("incidencias", "categorias.id_categoria = incidencias.id_categoria", "left")
+            ->groupBy("categorias.nombre_categoria")
             ->get()
             ->getResult();
     }
