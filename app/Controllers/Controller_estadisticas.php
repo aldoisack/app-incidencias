@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Model_estadisticas;
+use App\Models\Model_incidencias;
 
 class Controller_estadisticas extends Controller
 {
@@ -27,7 +28,7 @@ class Controller_estadisticas extends Controller
             'labels' => $labels,
             'datasets' => [
                 [
-                    'label' => 'Número de Incidencias por oficina',
+                    'label' => 'Incidencias por oficina',
                     'data' => $data_values,
                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
                     'borderColor' => 'rgba(75, 192, 192, 1)',
@@ -40,7 +41,7 @@ class Controller_estadisticas extends Controller
             'labels' => $labels2,
             'datasets' => [
                 [
-                    'label' => 'Número de Incidencias por categoría',
+                    'label' => 'Incidencias por categoría',
                     'data' => $data_values2,
                     'backgroundColor' => 'rgba(75, 192, 192, 0.2)',
                     'borderColor' => 'rgba(75, 192, 192, 1)',
@@ -51,7 +52,10 @@ class Controller_estadisticas extends Controller
 
         $data = [
             "chart_data" => json_encode($chart_data),
-            "chart_data2" => json_encode($chart_data2)
+            "chart_data2" => json_encode($chart_data2),
+            'incidencias_nuevas' => $obj_estadisticas->total_incidencias_nuevas(),
+            'incidencias_en_proceso' => $obj_estadisticas->total_incidencias_en_proceso(),
+            'incidencias_finalizadas' => $obj_estadisticas->total_incidencias_finalizadas(),
         ];
         return view('estadisticas/view_estadisticas', $data);
     }

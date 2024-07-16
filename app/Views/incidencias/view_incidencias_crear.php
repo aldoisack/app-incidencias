@@ -34,6 +34,30 @@
             -moz-appearance: textfield;
             appearance: textfield;
         }
+
+        /* -------------------------------------------------- */
+        /* Estilos para las etiquetas */
+        /* -------------------------------------------------- */
+        .etiqueta {
+            display: inline-block;
+            color: white;
+            border: 1px;
+            border-radius: 5px;
+            font-size: small;
+            padding: 0px 5px;
+        }
+
+        .etiqueta.nuevo {
+            background-color: purple;
+        }
+
+        .etiqueta.en-proceso {
+            background-color: orange;
+        }
+
+        .etiqueta.finalizado {
+            background-color: green;
+        }
     </style>
 </head>
 
@@ -177,20 +201,20 @@
             <!-- Formulario modal -->
             <!-- --------------------------------------------- -->
             <div class="modal fade" id="modalDetalleIncidencia" tabindex="-1" role="dialog" aria-labelledby="modalDetalleIncidenciaLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalDetalleIncidenciaLabel">Detalle de la Incidencia</h5>
-                            <button type="button" class="close" data-dismiss="modal" id="modalCloseButton" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+
+                        <br>
+
                         <div class="modal-body" id="modalBodyDetalleIncidencia">
                             <!-- Aquí se cargará el contenido del detalle de la incidencia -->
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalCloseFooterButton">Cerrar</button>
+                        <div class="d-flex justify-content-end">
+                            <div class="m-3">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalCloseFooterButton">Cerrar</button>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>

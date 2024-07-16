@@ -5,16 +5,14 @@
 
     <!-- Crear nueva categoría -->
     <div class="card-header">
-        <a class="btn btn-primary load-content" href="<?= base_url("categorias/crear") ?>" role="button">
+        <a class="btn btn-primary load-content" href="<?= base_url("categorias/crear/" . 0) ?>" role="button">
             Agregar categoría
         </a>
     </div>
 
     <div class="card-body">
-
-        <!-- Tabla -->
         <div class="table-responsive">
-            <table class="table">
+            <table id="datos" class="table">
 
                 <!-- Encabezado -->
                 <thead>
@@ -27,26 +25,42 @@
 
                 <!-- Registros -->
                 <tbody>
-                    <?php $number = 1 ?>
-                    <?php foreach ($categorias as $registro) : ?>
-
+                    <?php
+                    $number = 1;
+                    foreach ($categorias as $registro) :
+                    ?>
                         <tr class="">
+
+                            <!-- Número -->
                             <td scope="row"> <?= $number ?></td>
+
+                            <!-- Nombre -->
                             <td><?= $registro["nombre_categoria"]; ?> </td>
 
                             <!-- Botón editar -->
-                            <td><a class="btn btn-warning load-content" href="<?= base_url("categorias/editar/" . $registro["id_categoria"]) ?>" role="button">
+                            <td>
+                                <a class="btn btn-warning load-content" href="<?= base_url("categorias/editar/" . $registro["id_categoria"]) ?>" role="button">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <path fill="white" d="M5.616 20q-.691 0-1.153-.462T4 18.384V5.616q0-.691.463-1.153T5.616 4h8.386l-1 1H5.616q-.231 0-.424.192T5 5.616v12.769q0 .23.192.423t.423.192h12.77q.23 0 .423-.192t.192-.423v-7.489l1-1v8.489q0 .69-.462 1.153T18.384 20zM10 14v-2.615l8.944-8.944q.166-.166.348-.23t.385-.063q.189 0 .368.064t.326.21L21.483 3.5q.16.166.242.365t.083.4t-.061.382q-.06.18-.226.345L12.52 14zm10.814-9.715l-1.112-1.17zM11 13h1.092l6.666-6.666l-.546-.546l-.61-.584L11 11.806zm7.212-7.211l-.61-.585zl.546.546z" />
                                     </svg>
-                                </a></td>
+                                </a>
+                            </td>
+
                         </tr>
 
-                        <?php $number += 1 ?>
-                    <?php endforeach; ?>
+                    <?php
+                        $number += 1;
+                    endforeach;
+                    ?>
 
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#datos').DataTable();
+    });
+</script>

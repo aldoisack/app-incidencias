@@ -14,7 +14,6 @@ $routes->get("ticket", "Controller_incidencias::crear");
 $routes->post("incidencias/seguimiento", "Controller_incidencias::seguimiento");
 $routes->get("principal", "Controller_principal::index");
 
-
 // --------------------------------------------------
 // LOGIN
 // --------------------------------------------------
@@ -71,10 +70,10 @@ $routes->post('tecnicos/actualizar', 'Controller_tecnicos::actualizar');
 // --------------------------------------------------
 
 $routes->get("categorias/listar", "Controller_categorias::listar");
-$routes->get("categorias/crear", "Controller_categorias::crear");
+$routes->get("categorias/crear/(:num)", "Controller_categorias::crear/$1");
 $routes->get("categorias/editar/(:num)", "Controller_categorias::editar/$1");
 
-$routes->post('categorias/guardar', 'Controller_categorias::guardar');
+$routes->post('categorias/guardar/(:num)', 'Controller_categorias::guardar/$1');
 $routes->post('categorias/actualizar', 'Controller_categorias::actualizar');
 
 // --------------------------------------------------
@@ -85,7 +84,7 @@ $routes->get("bitacora", "Controller_bitacora::index");
 $routes->get("estadisticas", "Controller_estadisticas::index");
 $routes->get("longpolling", "Controller_longpolling::checkNewRecords");
 $routes->get("pdf/(:num)", "Controller_pdf::generatePdf/$1");
-$routes->get("dashboard", "Controller_dashboard::index");
+$routes->get("dashboard", "Controller_estadisticas::index");
 $routes->get("cambiar_contrasenia/(:num)", "Controller_tecnicos::cambiar_contrasenia/$1");
 $routes->post("actualizar_contrasenia", "Controller_tecnicos::actualizar_contrasenia");
 $routes->get("asignar_tecnico/(:num)", "Controller_asignaciones::index/$1");

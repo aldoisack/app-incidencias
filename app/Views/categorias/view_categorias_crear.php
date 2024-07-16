@@ -1,4 +1,5 @@
-<form class="ajax-form" action="<?= base_url("categorias/guardar") ?>" method="post">
+<form class="ajax-form" action="<?= base_url("categorias/guardar/" . $id_incidencia) ?>" method="post">
+
     <div class="card">
         <div class="card-header">
 
@@ -16,9 +17,15 @@
                 <input type="text" class="form-control" name="nombre_categoria" id="nombre_categoria" />
             </div>
 
-            <!-- Botón -->
+            <!-- Botón guardar -->
             <button type="submit" class="btn btn-success">Guardar</button>
-            <a class="btn btn-danger load-content" href="<?= base_url("categorias/listar") ?>" role="button">Cancelar</a>
+
+            <!-- Botón cancelar -->
+            <?php if ($id_incidencia == 0) : ?>
+                <a class="btn btn-danger load-content" href="<?= base_url("categorias/listar") ?>" role="button">Cancelar</a>
+            <?php else : ?>
+                <a class="btn btn-danger load-content" href="<?= base_url("incidencias/editar/" . $id_incidencia) ?>" role="button">Cancelar</a>
+            <?php endif; ?>
 
         </div>
     </div>

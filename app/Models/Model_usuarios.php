@@ -72,4 +72,13 @@ class Model_usuarios extends Model
             ->where("logueado", 1)
             ->findAll();
     }
+
+    public function obtener_admin()
+    {
+        return $this
+            ->select("usuarios.*, perfiles.nombre_perfil")
+            ->join("perfiles", "usuarios.id_perfil = perfiles.id_perfil")
+            ->where("perfiles.nombre_perfil", "admin")
+            ->first();
+    }
 }

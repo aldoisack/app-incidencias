@@ -3,7 +3,6 @@ $(document).ready(function () {
 
     // Comenzar el long polling
     longPolling();
-    //sse();
 
     // Ocultar navbar al hacer clic en un enlace
     $(document).on("click", ".navbar-nav .nav-link", function () {
@@ -109,32 +108,7 @@ $(document).ready(function () {
 
 
 
-    function sse() {
-        if (typeof (EventSource) !== "undefined") {
-            var sseUrl = $('body').data('sse-url');
 
-            var source = new EventSource(sseUrl);
-
-            source.onmessage = function (event) {
-                var data = JSON.parse(event.data);
-                console.log("Mensaje recibido: ", data);
-                // Aquí puedes actualizar la interfaz de usuario con los datos recibidos
-            };
-
-            source.onerror = function (error) {
-
-                console.error("Error en la conexión SSE:", error);
-
-                // Cerrar la conexión y reintentar después de un tiempo
-                source.close();
-                setTimeout(function () { sse(); }, 5000);
-
-            };
-        } else {
-            console.log("Lo siento, tu navegador no soporta Server-Sent Events.");
-        }
-
-    }
 
     function actualizarTabla() {
         var url = document.getElementById('url').value;;
@@ -188,9 +162,9 @@ $(document).ready(function () {
     function initCharts() {
         if (typeof initChart === 'function') {
             initChart('myChart1');
-            initChart('myChart2');
-            initChart2('myChart3');
-            initChart2('myChart4');
+            // initChart('myChart2');
+            initChart2('myChart2');
+            // initChart2('myChart4');
         }
     }
 

@@ -26,6 +26,7 @@ class Model_bitacora extends Model
         return $this
             ->select("bitacora.*, usuarios.nombres")
             ->join("usuarios", "bitacora.id_usuario = usuarios.id_usuario")
+            ->orderBy('id_modificacion', 'DESC')
             ->findAll();
     }
 

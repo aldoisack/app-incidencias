@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Model_incidencias;
 use App\Models\Model_oficinas;
 use App\Models\Model_perfiles;
 use App\Models\Model_usuarios;
@@ -44,7 +45,7 @@ class Controller_login extends Controller
         // Validando credenciales
         $usuario = $tbl_usuarios->verificar($usuario, $contrasenia);
 
-        // Iniciando sesión
+        // Sessión correcta
         if ($usuario) {
 
             $sesion = session();
@@ -61,8 +62,18 @@ class Controller_login extends Controller
 
             $tbl_usuarios->update($usuario["id_usuario"], $logueado);
 
+            $incidenciasModel = new Model_incidencias();
+            $incidencias_del_admin = $incidenciasModel->obtener_incidencias_del_admin();
+
+            if ($incidencias_del_admin && ($usuario['nombre_perfil'] != 'admin')) {
+                foreach ($incidencias_del_admin as $registro) {
+                    $incidenciasModel->actualizar_tecnico($registro['id_incidencia'], $usuario['id_usuario']);
+                }
+            }
+
             return $this->response->redirect("principal");
         } else {
+            // Sesión incorrecta
             session()->setFlashdata('error', 'Usuario o contraseña incorrectas');
             return $this->response->redirect(base_url());
         }

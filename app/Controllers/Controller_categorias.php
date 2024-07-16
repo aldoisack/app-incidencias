@@ -29,26 +29,31 @@ class Controller_categorias extends Controller
     // --------------------------------------------------
 
     /**
-     * Método para mostrar el formulario de registro de oficina
-     * @return view Formulario de registro de oficina
+     * Con este método se muestra el formulario para crear una nueva categoría
+     * @return view Formulario de nueva categoría
      */
-    public function crear()
+    public function crear($id_incidencia = 0)
     {
-        return view("categorias/view_categorias_crear");
+        $incidencia["id_incidencia"] = $id_incidencia;
+        return view("categorias/view_categorias_crear", $incidencia);
     }
+
 
     /**
      * Método para registrar una nueva oficina en la base de datos
      * @return view Vista principal del módulo
      */
-    public function guardar()
+    public function guardar($id_incidencia = 0)
     {
         $tbl_categorias = new Model_categorias();
-        $registro = [
-            "nombre_categoria" => $this->request->getVar("nombre_categoria"),
-        ];
+        $registro["nombre_categoria"] = $this->request->getVar("nombre_categoria");
         $tbl_categorias->insert($registro);
-        return $this->response->redirect(base_url("categorias/listar"));
+
+        if ($id_incidencia == 0) {
+            return $this->response->redirect(base_url("categorias/listar"));
+        } else {
+            return $this->response->redirect(base_url("incidencias/editar/" . $id_incidencia));
+        }
     }
 
     // --------------------------------------------------

@@ -23,7 +23,7 @@ function obtenerClaseEstado($estado)
         <!-- Tabla -->
         <!-- -------------------------------------------------- -->
         <div class="table-responsive">
-            <table class="table">
+            <table id="datos" class="table">
 
                 <!-- Encabezados -->
                 <thead>
@@ -45,7 +45,7 @@ function obtenerClaseEstado($estado)
                             <td><?= $registro["nombre_oficina"]; ?></td>
                             <td><?= $registro["problema"]; ?></td>
                             <td>
-                                <div class="etiqueta <?= obtenerClaseEstado($registro['nombre_estado']); ?>"><b>● <?= $registro["nombre_estado"]; ?></b></div>
+                                <div class="etiqueta <?= obtenerClaseEstado($registro['nombre_estado']); ?>" style="white-space: nowrap;"><b>● <?= $registro["nombre_estado"]; ?></b></div>
                             </td>
                             <td><?= $registro["nombres"]; ?></td>
                             <td>
@@ -63,3 +63,11 @@ function obtenerClaseEstado($estado)
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#datos').DataTable({
+            'order': []
+        });
+    });
+</script>

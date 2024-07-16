@@ -95,4 +95,19 @@ class Model_incidencias extends Model
             ->orderBy("id_incidencia", "DESC")
             ->first();
     }
+
+    public function obtener_incidencias_del_admin()
+    {
+        return $this
+            ->select('incidencias.*, usuarios.id_usuario, perfiles.nombre_perfil')
+            ->join('usuarios', 'incidencias.id_tecnico = usuarios.id_usuario')
+            ->join('perfiles', 'usuarios.id_perfil = perfiles.id_perfil')
+            ->where('perfiles.nombre_perfil', 'admin')
+            ->findAll();
+    }
+
+    public function actualizar_tecnico($id_incidencia, $id_tecnico)
+    {
+        return $this->update($id_incidencia, ['id_tecnico' => $id_tecnico]);
+    }
 }

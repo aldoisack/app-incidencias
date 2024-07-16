@@ -16,7 +16,7 @@
         <!-- Tabla -->
         <!-- -------------------------------------------------- -->
         <div class="table-responsive">
-            <table class="table">
+            <table id="datos" class="table">
 
                 <!-- Encabezado -->
                 <thead>
@@ -51,3 +51,8 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        $('#datos').DataTable();
+    });
+</script>

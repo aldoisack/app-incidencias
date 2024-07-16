@@ -8,7 +8,8 @@ use App\Models\Model_categorias;
 use App\Models\Model_oficinas;
 use App\Models\Model_incidencias;
 use App\Models\Model_estados;
-
+use App\Models\Model_perfiles;
+use App\Models\Model_usuarios;
 use CodeIgniter\Controller;
 
 use CodeIgniter\I18n\Time;
@@ -55,18 +56,17 @@ class Controller_incidencias extends Controller
     {
         // Acceso a la tabla 
         $tbl_oficinas = new Model_oficinas();
+
+        // Listar oficinas
         $oficinas["oficinas"] = $tbl_oficinas->obtener_oficinas();
 
-        if (!$this->tecnicos_disponibles()) {
-            return view("view_sin_tecnicos");
-        }
-
+        // Vista + oficinas
         return view("incidencias/view_incidencias_crear", $oficinas);
     }
 
     /**
-     * Método para registrar una nueva incidencia
-     * en la base de datos
+     * Con este método se registra una nueva incidencia en la base de datos
+     * 
      * @return int ID del registro ingresado
      */
     public function guardar()
@@ -74,19 +74,27 @@ class Controller_incidencias extends Controller
         // Acceso a la tabla 
         $tbl_estados = new Model_estados();
 
+        // En caso no haya técnicos disponibles, se asigna al admin
+        if (!$this->tecnicos_disponibles()) {
+            $tecnico = ((new Model_usuarios())->obtener_admin())['id_usuario'];
+        } else {
+            $tecnico = (new Model_asignaciones())->asignar_tecnico();
+        }
+
+        // Recogemos los datos
         $datos = [
             "id_oficina" => $this->request->getVar("id_oficina"),
             "telefono"   => $this->request->getVar("telefono"),
             "problema"   => $this->request->getVar("problema"),
             "id_estado"  => $tbl_estados->obtener_id("Nuevo"),
-            "id_tecnico" => (new Model_asignaciones())->asignar_tecnico(),
+            "id_tecnico" => $tecnico
         ];
 
-        # Guardamos la información
+        // Guardamos la información
         $tbl_incidencias = new Model_incidencias();
         $tbl_incidencias->insert($datos);
 
-        # Obtenemos el ID del registro ingresado
+        // Obtenemos el ID del registro ingresado
         $id_incidencia_registrada = $tbl_incidencias->getInsertID();
 
         // Retornar el ID como JSON
@@ -97,6 +105,10 @@ class Controller_incidencias extends Controller
     // EDITAR
     // ----------------------------------------------------------------
 
+    /**
+     * Método para editar una incidencia.
+     * Le pasamos como parámetro en ID de la incidencia
+     */
     public function editar($id_incidencia)
     {
         $tbl_incidencias = new Model_incidencias();
@@ -137,11 +149,11 @@ class Controller_incidencias extends Controller
         // Funcionalidad para la vista "Historial"
         $es_historial = $this->request->getVar("es_historial");
         if ($es_historial) {
-            return $this->response->redirect(base_url("historial/listar"));
+            return $this->response->redirect(base_url("historial/editar/" . $id_incidencia));
         }
 
         // Redirección
-        return $this->response->redirect(base_url("incidencias/listar"));
+        return $this->response->redirect(base_url("incidencias/editar/" . $id_incidencia));
     }
 
     public function finalizar($id_incidencia)

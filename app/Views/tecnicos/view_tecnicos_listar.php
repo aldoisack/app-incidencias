@@ -15,7 +15,7 @@
         <!-- -------------------------------------------------- -->
         <div class="table-responsive">
 
-            <table class="table">
+            <table id="datos" class="table">
 
                 <!-- Encabezado -->
                 <thead>
@@ -38,7 +38,7 @@
                             <td><?= $registro["nombres"]; ?></td>
                             <td><?= $registro["apellidos"]; ?></td>
                             <td><?= $registro["usuario"]; ?></td>
-                            <td>
+                            <td style="white-space: nowrap;">
                                 <!-- Botón editar -->
                                 <a class="btn btn-warning load-content" href="<?= base_url("tecnicos/editar/" . $registro["id_usuario"]) ?>" role="button">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -65,3 +65,8 @@
 
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        $('#datos').DataTable();
+    });
+</script>

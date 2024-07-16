@@ -12,6 +12,9 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+
+    <!-- Etiquetas -->
     <style>
         .etiqueta {
             display: inline-block;
@@ -24,28 +27,19 @@
 
         .etiqueta.nuevo {
             background-color: purple;
-            /* Color de fondo para "Nuevo" */
-            /* border: 1px solid purple; */
-            /* Borde para "Nuevo" */
         }
 
         .etiqueta.en-proceso {
             background-color: orange;
-            /* Color de fondo para "En proceso" */
-            /* border: 1px solid #ec971f; */
-            /* Borde para "En proceso" */
         }
-
 
         .etiqueta.finalizado {
             background-color: green;
-            /* Color de fondo para "Finalizado" */
-            /* border: 1px solid #4cae4c; */
-            /* Borde para "Finalizado" */
         }
     </style>
+
+    <!-- Permiso de notificación -->
     <script>
-        // Aquí va el código JavaScript para solicitar permiso de notificaciones
         if ('Notification' in window) {
             if (Notification.permission === 'default') {
                 Notification.requestPermission().then(function(permission) {
@@ -66,11 +60,11 @@
     </script>
 </head>
 
-
+<!-- "Variables" utilizadas para las notificaciones -->
 <input type="hidden" id="id_usuario" value="<?= session()->get("id_usuario") ?>" />
 <input type="hidden" id="nombre_perfil" value="<?= session()->get("nombre_perfil") ?>" />
 
-<body data-sse-url="<?php echo base_url('sse'); ?>">
+<body>
 
     <header>
 
@@ -90,7 +84,7 @@
                     <ul class="navbar-nav me-auto mt-2 mt-lg-0">
 
                         <!-- Módulos -->
-                        <?php foreach ($modulos as $registro) { ?>
+                        <?php foreach ($modulos as $registro) : ?>
                             <li>
                                 <b>
                                     <a class="nav-link active load-content" href="<?= base_url() . $registro["ruta"] ?>">
@@ -98,7 +92,7 @@
                                     </a>
                                 </b>
                             </li>
-                        <?php } ?>
+                        <?php endforeach; ?>
 
                     </ul>
 
@@ -128,38 +122,8 @@
     <!-- VISTA DINÁMICA -->
     <main class="container">
         <div id="content">
-            <div class="load-content">
-                <div class="rounded bg-white">
-                    <div class="row">
-
-                        <div class="col-md-3 border-right">
-                            <div class="d-flex flex-column align-items-center text-center">
-                                <img class="rounded-circle mt-5" width="150px" src="https://static.vecteezy.com/system/resources/previews/020/911/740/non_2x/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png">
-                                <span class="font-weight-bold"><?= $usuario["usuario"] ?></span>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 border-right">
-                            <div class="p-3 py-5">
 
 
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <h4 class="text-right"><b>Perfil</b></h4>
-                                </div>
-
-                                <div class="col">
-                                    <label class="labels">Nombres</label><input type="text" class="form-control" placeholder="first name" value="<?= $usuario["nombres"] ?>" readonly>
-                                </div>
-                                <br>
-                                <div class="col">
-                                    <label class="labels">Apellidos</label><input type="text" class="form-control" value="<?= $usuario["apellidos"] ?>" placeholder="surname" readonly>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
@@ -180,6 +144,36 @@
 
     <!-- Funcionalidades -->
     <script src="<?= base_url('js/javascript.js') ?>"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+    <script>
+        function dashboard() {
+            $.ajax({
+                url: '<?= base_url('dashboard') ?>', // Ruta configurada
+                type: 'GET',
+                success: function(response) {
+                    $('#content').html(response); // Cargar la vista en el div
+
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error al cargar la vista:', error);
+                }
+            });
+        }
+
+        function initCharts() {
+            if (typeof initChart === 'function') {
+                initChart('myChart1');
+                // initChart('myChart2');
+                initChart2('myChart2');
+                // initChart2('myChart4');
+            }
+        }
+
+        $(document).ready(function() {
+            dashboard(); // Llamar a la función al cargar la página
+            initCharts();
+        });
+    </script>
 
 </body>
 
