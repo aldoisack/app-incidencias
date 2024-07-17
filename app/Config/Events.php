@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use App\Models\Model_usuarios;
 use CodeIgniter\Events\Events;
 use CodeIgniter\Exceptions\FrameworkException;
 use CodeIgniter\HotReloader\HotReloader;
@@ -42,7 +43,7 @@ Events::on('pre_system', static function () {
      * --------------------------------------------------------------------
      * If you delete, they will no longer be collected.
      */
-    if (CI_DEBUG && ! is_cli()) {
+    if (CI_DEBUG && !is_cli()) {
         Events::on('DBQuery', 'CodeIgniter\Debug\Toolbar\Collectors\Database::collect');
         Services::toolbar()->respond();
         // Hot Reload route - for framework use on the hot reloader.
@@ -52,4 +53,12 @@ Events::on('pre_system', static function () {
             });
         }
     }
+});
+
+Events::on('session:expire', function ($session) {
+    // Actualizar el valor en la base de datos
+    $model_usuarios = new Model_usuarios();
+    $datos['logueado'] = 0;
+    $id_usuario = $session->get('id_usuario');
+    $model_usuarios->update($id_usuario, $datos);
 });

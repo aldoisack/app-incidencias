@@ -283,6 +283,7 @@
                         $('#modalBodyDetalleIncidencia #boton_guardar').remove();
                         $('#modalBodyDetalleIncidencia #boton_regresar').remove();
                         $('#modalBodyDetalleIncidencia #boton_reporte').remove();
+                        $('#modalBodyDetalleIncidencia #boton_nueva_categoria').remove();
                         $('#modalBodyDetalleIncidencia #detalle').addClass('disabled').css('pointer-events', 'none');
                         $('#modalBodyDetalleIncidencia #problema').addClass('disabled').css('pointer-events', 'none');
                         $('#modalBodyDetalleIncidencia #telefono').addClass('disabled').css('pointer-events', 'none');

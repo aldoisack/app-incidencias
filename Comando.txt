@@ -1,0 +1,1 @@
+ngrok http --domain=above-lobster-holy.ngrok-free.app 80

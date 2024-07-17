@@ -90,3 +90,5 @@ $routes->post("actualizar_contrasenia", "Controller_tecnicos::actualizar_contras
 $routes->get("asignar_tecnico/(:num)", "Controller_asignaciones::index/$1");
 $routes->get("sse", "Controller_sse::index");
 $routes->setAutoRoute(true);
+
+$routes->get('probando', 'Controller_sesion::index');

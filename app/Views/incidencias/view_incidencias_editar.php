@@ -135,7 +135,7 @@ function obtenerClaseEstado($estado)
                                     </option>
                                 <?php endforeach; ?>
                             </select>
-                            <a class="btn btn-primary mx-3 load-content" href="<?= base_url("categorias/crear/") . $incidencia["id_incidencia"] ?>" role="button">Nueva</a>
+                            <a id="boton_nueva_categoria" class="btn btn-primary mx-3 load-content" href="<?= base_url("categorias/crear/") . $incidencia["id_incidencia"] ?>" role="button">Nueva</a>
                         </div>
                     </div>
                 </div>
